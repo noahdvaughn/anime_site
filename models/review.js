@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Review extends Model {
     /**
@@ -13,16 +11,34 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Review.init({
-    userId: DataTypes.INTEGER,
-    animeId: DataTypes.INTEGER,
-    body: DataTypes.STRING,
-    rating: DataTypes.INTEGER,
-    yearCreated: DataTypes.INTEGER,
-    genre: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Review',
-  });
-  return Review;
-};
+  Review.init(
+    {
+      userId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      animeId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'animes',
+          key: 'id'
+        }
+      },
+      body: DataTypes.STRING,
+      rating: DataTypes.INTEGER,
+      yearCreated: DataTypes.INTEGER,
+      genre: DataTypes.STRING
+    },
+    {
+      sequelize,
+      modelName: 'Review',
+      tableName: 'reviews'
+    }
+  )
+  return Review
+}
