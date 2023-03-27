@@ -2,6 +2,9 @@ import { Route, Routes } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/auth'
 import './App.css'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
+import Home from './pages/Home'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -26,7 +29,13 @@ function App() {
 
   return (
     <div className="App">
-
+        <Navbar/>
+      <main>
+      <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+        </Routes>
+      </main>
     </div>
   )
 }
