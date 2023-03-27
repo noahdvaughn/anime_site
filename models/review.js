@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
+      malAnimeId: DataTypes.INTEGER,
       body: DataTypes.STRING,
       rating: DataTypes.INTEGER,
       yearCreated: DataTypes.INTEGER,

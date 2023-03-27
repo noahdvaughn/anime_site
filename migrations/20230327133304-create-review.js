@@ -25,6 +25,9 @@ module.exports = {
           key: 'id'
         }
       },
+      malAnimeId: {
+        type: Sequelize.INTEGER
+      },
       body: {
         type: Sequelize.STRING
       },

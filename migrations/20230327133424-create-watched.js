@@ -25,6 +25,9 @@ module.exports = {
           key: 'id'
         }
       },
+      malAnimeId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
