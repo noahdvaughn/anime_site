@@ -36,10 +36,9 @@ const GetAnimeDetails = async (req, res) => {
 }
 const SearchAnime = async (req, res) => {
   const { searchQuery } = req.params
-  searchQuery = encodeURIComponent(searchQuery)
   try {
     let animeDetails = await axios.get(
-      `https://api.myanimelist.net/v2/anime?q=${searchQuery}&limit=4`,
+      `https://api.myanimelist.net/v2/anime?q=${searchQuery}&limit=10`,
       {
         headers: {
           'X-MAL-CLIENT-ID': `${MAL_KEY}`

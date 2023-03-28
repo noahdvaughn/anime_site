@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Home from './pages/Home'
 import AnimeDetails from './pages/AnimeDetails'
+import SearchDetails from './pages/SearchDetails'
 
 export const CurrentMalId = createContext(0)
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/details/:animeName/:animeId" element={<AnimeDetails />}/>
+          <Route path="/search/:search" element={<SearchDetails/>} />
         </Routes>
       </CurrentMalId.Provider>
       </main>
