@@ -75,9 +75,13 @@ const CheckSession = async (req, res) => {
   const { payload } = res.locals
   res.send(payload)
 }
-const GetUsers = async (req, res) => {
+const GetUser = async (req, res) => {
+  const { id } = req.params
   try {
-    const users = await User.findAll()
+    const users = await User.findOne({
+      where: { id: id },
+      raw: true
+    })
     res.send(users)
   } catch (error) {
     throw error
@@ -89,5 +93,5 @@ module.exports = {
   Register,
   UpdatePassword,
   CheckSession,
-  GetUsers
+  GetUser
 }
