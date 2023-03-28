@@ -7,6 +7,8 @@ import Sidebar from './components/Sidebar'
 import Home from './pages/Home'
 import AnimeDetails from './pages/AnimeDetails'
 import SearchDetails from './pages/SearchDetails'
+import PersonalPage from './pages/PersonalPage'
+import UserDetails from './pages/UserDetails'
 
 export const CurrentMalId = createContext(0)
 function App() {
@@ -43,6 +45,8 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/details/:animeName/:animeId" element={<AnimeDetails />}/>
           <Route path="/search/:search" element={<SearchDetails/>} />
+          <Route path="/profile/:id" element={<PersonalPage/>}/>
+          <Route path="/user/:id" element={<UserDetails/>}/>
         </Routes>
       </CurrentMalId.Provider>
       </main>
