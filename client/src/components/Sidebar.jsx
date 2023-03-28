@@ -3,7 +3,9 @@ const Sidebar = () => {
 
   return(
   <div className='Sidebar'>
-    <h2>qui</h2>
+    <h2>
+
+    </h2>
   </div>
   )
 }

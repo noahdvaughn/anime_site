@@ -6,7 +6,7 @@ const Navbar = ({user, handleLogOut}) => {
   <div>
   <header>
     <img id='plug'src={plug}/>
-    <h1>test</h1>
+    <h1>navtest</h1>
   </header>
   </div>)
 }
