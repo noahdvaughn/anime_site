@@ -2,11 +2,13 @@ import {useParams} from "react-router-dom"
 import { useEffect, useState } from "react"
 import { GetDetails } from "../services/anime"
 import { GetAllByAnimeId } from "../services/recommended"
+import CreateReview from "./CreateReview"
 
-const AnimeDetails = () => {
+const AnimeDetails = ({user}) => {
   const {animeId, animeName} = useParams()
   const [details, setDetails] = useState()
   const [data, setData] = useState()
+  const [modal, setModal] = useState(false)
 
   useEffect(()=>{
     const grabDetails = async(animeId) => {
@@ -19,14 +21,31 @@ const AnimeDetails = () => {
     grabDetails(animeId)
   },[])
 
-  console.log(details)
+  const toggleModal = () => {
+    setModal(!modal)
+  }
+
+  console.log(data)
 
 
-  return <div>
+  return <div className="animeDetailsBody">
     {details ? (
-      <h1>{details.data.synopsis}</h1>
+      <p>{details.data.synopsis}</p>
     ) : (<></>)}
-    <button></button>
+    {user ? (
+    <button>Make A Review</button>
+
+    ): (<p>Log in to make a review</p>)}
+    {modal && (<div className="modal">
+      <div className="overlay">
+        <CreateReview id={animeId}/>
+      </div>
+
+    </div>)}
+
+    <button onClick={toggleModal}>test rev</button>
+    
+    
   </div>
 }
 export default AnimeDetails

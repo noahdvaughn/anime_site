@@ -5,14 +5,14 @@ const MAL_KEY = process.env.MAL_KEY
 const GetSeasonalAnime = async (req, res) => {
   try {
     let seasonalAnime = await axios.get(
-      `https://api.myanimelist.net/v2/anime/season/2023/spring?fields=id,title,main_picture,alternative_titles,synopsis&limit=2`,
+      `https://api.myanimelist.net/v2/anime/season/2023/spring?fields=id,title,main_picture,alternative_titles,synopsis&limit=10`,
       {
         headers: {
           'X-MAL-CLIENT-ID': `${MAL_KEY}`
         }
       }
     )
-    return res.status(200).json(seasonalAnime.data)
+    return res.status(200).json(seasonalAnime.data.data)
   } catch (error) {
     throw error
   }

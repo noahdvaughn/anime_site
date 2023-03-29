@@ -3,6 +3,8 @@ body{
   background-color: grey;
   margin: 0;
   padding: 0;
+  padding-left: 8vw;
+  padding-top: 10vh;
 }
 #plug{
   width: 50px;
@@ -21,14 +23,54 @@ header{
   margin: 0;
   padding: 0;
   height: 10vh;
+  left: 0;
+  top: 0;
+  position: fixed;
 }
 .Sidebar{
   background-color: black;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   height: 90vh;
-  width: 75px;
+  width: 8vw;
+  position:fixed;
+  left: 0;
+  
 }
 main{
   display: flex;
+}
+.icon{
+  max-width: 50px;
+  margin-bottom: -20px;
+  padding: 0;
+}
+.overlay, .modal{
+  left: 8vw;
+  right: 0;
+  top: 10vh;
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: antiquewhite; */
+}
+.overlay {
+  background: rgba(49,49,49,0.5);
+}
+.animeDetailsBody{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reviewDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
 }
