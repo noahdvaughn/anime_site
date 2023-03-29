@@ -10,6 +10,14 @@ import SearchDetails from './pages/SearchDetails'
 import PersonalPage from './pages/PersonalPage'
 import UserDetails from './pages/UserDetails'
 
+import CreateRecommendation from './pages/CreateRecommendation'
+import CreateReview from './pages/CreateReview'
+import EditRecommendation from './pages/EditRecommendation'
+import EditReview from './pages/EditReview'
+import Login from './pages/Login'
+import Register from './pages/Register'
+
+
 export const CurrentMalId = createContext(0)
 function App() {
   const [user, setUser] = useState(null)
