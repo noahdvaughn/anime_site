@@ -8,8 +8,8 @@ export const GetRecsByUserId = async (id) => {
   const recs = await Client.get(`/rec/by-user/${id}`)
   return recs
 }
-export const GetRecsByAnimeId = async (id) => {
-  const recs = await Client.get(`/rec/by-anime/${id}`)
+export const GetAllByAnimeId = async (id) => {
+  const recs = await Client.get(`/rec/all-by-anime/${id}`)
   return recs
 }
 export const CreateRec = async (data) => {

@@ -18,17 +18,17 @@ const GetReviewsByUserId = async (req, res) => {
     throw error
   }
 }
-const GetReviewsByAnimeId = async (req, res) => {
-  let { animeId } = req.params
-  try {
-    const reviews = await Review.findAll({
-      where: { animeId: animeId }
-    })
-    res.status(200).send(reviews)
-  } catch (error) {
-    throw error
-  }
-}
+// const GetReviewsByAnimeId = async (req, res) => {
+//   let { animeId } = req.params
+//   try {
+//     const reviews = await Review.findAll({
+//       where: { animeId: animeId }
+//     })
+//     res.status(200).send(reviews)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 const CreateReview = async (req, res) => {
   try {
     let userId = parseInt(req.params.userId)
@@ -70,7 +70,7 @@ const DeleteReview = async (req, res) => {
 module.exports = {
   GetReviews,
   GetReviewsByUserId,
-  GetReviewsByAnimeId,
+  // GetReviewsByAnimeId,
   CreateReview,
   UpdateReview,
   DeleteReview

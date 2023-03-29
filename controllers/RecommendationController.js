@@ -1,4 +1,5 @@
 const { Recommendation } = require('../models')
+const { Review } = require('../models')
 
 const GetRecs = async (req, res) => {
   try {
@@ -19,13 +20,16 @@ const GetRecsByUserId = async (req, res) => {
     throw error
   }
 }
-const GetRecsByAnimeId = async (req, res) => {
+const GetRecsAndRevsByAnimeId = async (req, res) => {
   let { animeId } = req.params
   try {
     const recs = await Recommendation.findAll({
       where: { animeId: animeId }
     })
-    res.status(200).send(recs)
+    const revs = await Review.findAll({
+      where: { animeId: animeId }
+    })
+    res.status(200).send({ recommendations: recs, reviews: revs })
   } catch (error) {
     throw error
   }
@@ -71,7 +75,7 @@ const DeleteRec = async (req, res) => {
 module.exports = {
   GetRecs,
   GetRecsByUserId,
-  GetRecsByAnimeId,
+  GetRecsAndRevsByAnimeId,
   CreateRec,
   UpdateRec,
   DeleteRec

@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
+import { GetRecs } from "../services/recommended"
 
 const Recommendations = () => {
+  const [recs, setRecs] = useEffect()
 
   useEffect(()=>{
-    const grabUserDetails = async(id) => {
-      setUserDetails(GetSingleUser(id))
+    const grabRecs = async() => {
+      setRecs(GetRecs())
     }
+    grabRecs()
     
   },[])
 
