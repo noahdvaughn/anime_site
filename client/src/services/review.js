@@ -8,10 +8,10 @@ export const GetReviewsByUserId = async (id) => {
   const recs = await Client.get(`/review/by-user/${id}`)
   return recs
 }
-export const GetReviewsByAnimeId = async (id) => {
-  const recs = await Client.get(`/review/by-anime/${id}`)
-  return recs
-}
+// export const GetReviewsByAnimeId = async (id) => {
+//   const recs = await Client.get(`/review/by-anime/${id}`)
+//   return recs
+// }
 export const CreateReview = async (data) => {
   await Client.post('/review/create', data)
 }

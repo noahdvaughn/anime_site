@@ -19,12 +19,14 @@ const AnimeDetails = () => {
     grabDetails(animeId)
   },[])
 
+  console.log(details)
 
 
   return <div>
     {details ? (
-      <h1>{details.data.background}</h1>
+      <h1>{details.data.synopsis}</h1>
     ) : (<></>)}
+    <button></button>
   </div>
 }
 export default AnimeDetails
