@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import { GetDetails } from "../services/anime"
 import { GetAllByAnimeId } from "../services/recommended"
 import CreateReview from "./CreateReview"
+import x from '../assets/x.png'
+
 
 const AnimeDetails = ({user}) => {
   const {animeId, animeName} = useParams()
@@ -25,23 +27,29 @@ const AnimeDetails = ({user}) => {
     setModal(!modal)
   }
 
-  console.log(data)
+  console.log(details)
 
 
   return <div className="animeDetailsBody">
     {details ? (
+
       <p>{details.data.synopsis}</p>
-    ) : (<></>)}
+
+    ) : 
+    (<></>)}
     {user ? (
     <button>Make A Review</button>
 
     ): (<p>Log in to make a review</p>)}
-    {modal && (<div className="modal">
-      <div className="overlay">
-        <CreateReview id={animeId}/>
-      </div>
+    {modal && (
+    <div className="modal">
 
-    </div>)}
+      <div className="overlay">
+      <img src={x} className='icon' onClick={toggleModal}/>
+        <CreateReview id={animeId} name={animeName} year={details.data.start_date} genre={details.data.genres}/>
+      </div>
+    </div>
+    )}
 
     <button onClick={toggleModal}>test rev</button>
     

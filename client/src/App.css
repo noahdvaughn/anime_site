@@ -53,12 +53,12 @@ main{
   top: 10vh;
   bottom: 0;
   position: fixed;
-  width: 100vw;
+  width: 92vw;
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: antiquewhite; */
+  flex-direction: column;
 }
 .overlay {
   background: rgba(49,49,49,0.5);
@@ -72,5 +72,5 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-color: grey;
 }

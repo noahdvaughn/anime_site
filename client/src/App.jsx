@@ -23,7 +23,7 @@ function App() {
   const [user, setUser] = useState(null)
 
   const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
+    
     setUser(null)
     localStorage.clear()
   }
@@ -40,14 +40,12 @@ function App() {
     }
   }, [])
 
-  // ref={currentMalId}
-  // const whater = (props, ref)
 
   return (
     <div className="App">
         <Navbar/>
       <main>
-      <Sidebar />
+      <Sidebar setUser={setUser}/>
       <CurrentMalId.Provider value={CurrentMalId}>
         <Routes>
           <Route path="/" element={<Home />}/>
