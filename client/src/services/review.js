@@ -12,7 +12,7 @@ export const GetReviewsByUserId = async (id) => {
 //   const recs = await Client.get(`/review/by-anime/${id}`)
 //   return recs
 // }
-export const CreateReview = async (data) => {
+export const MakeReview = async (data) => {
   await Client.post('/review/create', data)
 }
 export const UpdateReview = async (id, data) => {

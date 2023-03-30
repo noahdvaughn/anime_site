@@ -66,7 +66,17 @@ main{
 .animeDetailsBody{
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.animeDetailsTop{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  
+}
+.detailsColumn{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
 }
 .reviewDiv{
   display: flex;

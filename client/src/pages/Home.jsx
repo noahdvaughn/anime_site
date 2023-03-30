@@ -15,8 +15,6 @@ const Home = ({user}) => {
     }
     grabSeasonal()
   }, [])
-console.log(seasonalAnime.data)
-// console.log(seasonalAnime.data.data[1])
 
 
 

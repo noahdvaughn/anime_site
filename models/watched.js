@@ -22,14 +22,8 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
       animeId: {
-        type: DataTypes.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'animes',
-          key: 'id'
-        }
-      },
-      malAnimeId: DataTypes.INTEGER
+        type: DataTypes.INTEGER
+      }
     },
     {
       sequelize,

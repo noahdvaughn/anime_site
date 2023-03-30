@@ -5,10 +5,14 @@ import logout from '../assets/logouticon.png'
 import Login from '../pages/Login'
 import { useEffect, useState } from "react"
 import userPic from '../assets/user.png'
+import pencil from '../assets/pencil.png'
+import folder from '../assets/folder.png'
 
 
 const Sidebar = ({setUser, user, handleLogOut}) => {
   const [modal, setModal] = useState(false)
+  const [signedIn, setSignedIn] = useState(false)
+  const [signedOut, setSignedOut] = useState(false)
   const toggleModal = () => {
     setModal(!modal)
   }
@@ -19,6 +23,10 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
     <Link to='/'>
     <img src={house} className='icon'/>
     <p>Home</p>
+    </Link>
+    <Link to='/recommendations'>
+    <img src={pencil} className='icon'/>
+    <p>Recs</p>
     </Link>
 
     
@@ -34,11 +42,12 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
     <p>Sign-Out</p>
     </div>
       </>
-
-
-    
     ) : (
       <>
+    <Link to={`/register`}>
+    <img src={folder} className='icon'/>
+    <p>Register</p>
+    </Link>
     <div onClick={toggleModal}>
     <img src={login} className='icon'/>
     <p>Sign-In</p>

@@ -9,13 +9,14 @@ import AnimeDetails from './pages/AnimeDetails'
 import SearchDetails from './pages/SearchDetails'
 import PersonalPage from './pages/PersonalPage'
 import UserDetails from './pages/UserDetails'
+import Recommendations from './pages/Recommendations'
+import Register from './pages/Register'
 
 import CreateRecommendation from './pages/CreateRecommendation'
 import CreateReview from './pages/CreateReview'
 import EditRecommendation from './pages/EditRecommendation'
 import EditReview from './pages/EditReview'
 import Login from './pages/Login'
-import Register from './pages/Register'
 
 
 export const CurrentMalId = createContext(0)
@@ -51,9 +52,10 @@ function App() {
           <Route path="/" element={<Home user={user}/>}/>
           <Route path="/details/:animeName/:animeId" element={<AnimeDetails user={user}/>}/>
           <Route path="/search/:search" element={<SearchDetails/>} />
-          <Route path="/profile/:id" element={<PersonalPage/>}/>
+          <Route path="/profile/:id" element={<PersonalPage user={user}/>}/>
           <Route path="/user/:id" element={<UserDetails/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/recommendations' element={<Recommendations/>}/>
         </Routes>
       </CurrentMalId.Provider>
       </main>
