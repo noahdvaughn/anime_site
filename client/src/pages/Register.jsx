@@ -20,7 +20,6 @@ const Register = ( ) => {
       email: formValues.email,
       password: formValues.password
     })
-    setFormValues(initialState)
     navigate('/')
   }
 

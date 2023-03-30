@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
 import { useNavigate, Link } from 'react-router-dom'
+
 import x from '../assets/x.png'
 
 
 
-const Login = ( {toggleModal}) => {
+const Login = ( {toggleModal, setUser}) => {
+  let navigate = useNavigate()
+
   
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
@@ -15,9 +18,8 @@ const Login = ( {toggleModal}) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
-    setFormValues(initialState)
     setUser(payload)
-    navigate('/')
+    toggleModal()
   }
   const guestLogin = (e) => {
     e.preventDefault()

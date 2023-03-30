@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { GetDetails } from "../services/anime"
 import { GetAllByAnimeId } from "../services/recommended"
 import CreateReview from "./CreateReview"
-import x from '../assets/x.png'
 
 
 const AnimeDetails = ({user}) => {
@@ -27,7 +26,6 @@ const AnimeDetails = ({user}) => {
     setModal(!modal)
   }
 
-  console.log(details)
 
 
   return <div className="animeDetailsBody">
@@ -45,8 +43,7 @@ const AnimeDetails = ({user}) => {
     <div className="modal">
 
       <div className="overlay">
-      <img src={x} className='icon' onClick={toggleModal}/>
-        <CreateReview id={animeId} name={animeName} year={details.data.start_date} genre={details.data.genres}/>
+        <CreateReview id={animeId} name={animeName} year={details.data.start_date} genre={details.data.genres} toggleModal={toggleModal}/>
       </div>
     </div>
     )}

@@ -8,7 +8,7 @@ const Register = async (req, res) => {
     const user = await User.create({
       email,
       password: passwordDigest,
-      userName: name
+      username: name
     })
     res.send(user)
   } catch (error) {
@@ -22,14 +22,12 @@ const Login = async (req, res) => {
       where: { email: email },
       raw: true
     })
-
     let matched = await middleware.comparePassword(user.password, password)
-
     if (matched) {
       let payload = {
         id: user.id,
         email: user.email,
-        name: user.userName
+        name: user.username
       }
       let token = middleware.createToken(payload)
       return res.send({ user: payload, token })

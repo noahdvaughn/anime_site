@@ -5,7 +5,7 @@ import Login from '../pages/Login'
 import { useEffect, useState } from "react"
 
 
-const Sidebar = () => {
+const Sidebar = ({setUser}) => {
   const [modal, setModal] = useState(false)
   const toggleModal = () => {
     setModal(!modal)
@@ -27,7 +27,7 @@ const Sidebar = () => {
     <div className="modal">
 
       <div className="overlay">
-        <Login toggleModal={toggleModal}/>
+        <Login toggleModal={toggleModal} setUser={setUser}/>
       </div>
     </div>
     )}

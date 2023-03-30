@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { GetSeasonal } from '../services/anime'
 import AnimeCard from '../components/AnimeCard'
 
-const Home = () => {
+const Home = ({user}) => {
+  console.log(user)
   const [seasonalAnime, setSeasonalAnime] = useState([])
   
   
@@ -26,7 +27,7 @@ console.log(seasonalAnime.data)
     {seasonalAnime.length === 0 ? (<>bad</>) : 
     (<div>
       {seasonalAnime.data.map((anime)=>(
-      <AnimeCard anime={anime.node}/>
+      <AnimeCard anime={anime.node} key={anime.node.id}/>
     ))}</div>) }
     
   </div>

@@ -48,7 +48,7 @@ function App() {
       <Sidebar setUser={setUser}/>
       <CurrentMalId.Provider value={CurrentMalId}>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<Home user={user}/>}/>
           <Route path="/details/:animeName/:animeId" element={<AnimeDetails user={user}/>}/>
           <Route path="/search/:search" element={<SearchDetails/>} />
           <Route path="/profile/:id" element={<PersonalPage/>}/>
