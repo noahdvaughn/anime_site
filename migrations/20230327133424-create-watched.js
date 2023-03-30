@@ -20,8 +20,8 @@ module.exports = {
       animeId: {
         type: Sequelize.INTEGER
       },
-      malAnimeId: {
-        type: Sequelize.INTEGER
+      animeName: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

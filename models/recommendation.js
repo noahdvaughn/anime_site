@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       recommendedId: {
         type: DataTypes.INTEGER
       },
+      userName: DataTypes.STRING,
       userPic: DataTypes.STRING,
       animeName: DataTypes.STRING,
       recommendedName: DataTypes.STRING,

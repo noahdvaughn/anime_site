@@ -23,6 +23,7 @@ module.exports = {
       recommendedId: {
         type: Sequelize.INTEGER
       },
+      userName: Sequelize.STRING,
       userPic: Sequelize.STRING,
       animeName: Sequelize.STRING,
       recommendedName: Sequelize.STRING,

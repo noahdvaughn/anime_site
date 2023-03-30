@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       animeId: {
         type: DataTypes.INTEGER
-      }
+      },
+      animeName: DataTypes.STRING
     },
     {
       sequelize,

@@ -25,7 +25,7 @@ const AnimeDetails = ({user}) => {
   const toggleModal = () => {
     setModal(!modal)
   }
-  console.log(details)
+  console.log(data)
   
 
 
@@ -74,6 +74,17 @@ const AnimeDetails = ({user}) => {
       </div>
     </div>
     )}
+
+    {data.data.reviews.length === 0 ? (<></>) : (
+      <div>
+        <h3>Reviews: </h3>
+        <div>
+          {data.data.reviews.map((review)=>(
+            <div></div>
+          ))}
+        </div>
+        </div>
+      )}
     </div>
   
 }
