@@ -45,7 +45,7 @@ function App() {
     <div className="App">
         <Navbar/>
       <main>
-      <Sidebar setUser={setUser}/>
+      <Sidebar setUser={setUser} user={user} handleLogOut={handleLogOut}/>
       <CurrentMalId.Provider value={CurrentMalId}>
         <Routes>
           <Route path="/" element={<Home user={user}/>}/>
