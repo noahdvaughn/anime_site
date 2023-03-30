@@ -3,7 +3,6 @@ import house from '../assets/white-home-icon-png-21.jpg'
 import login from '../assets/loginicon.png'
 import Login from '../pages/Login'
 import { useEffect, useState } from "react"
-import x from '../assets/x.png'
 
 
 const Sidebar = () => {
@@ -28,8 +27,7 @@ const Sidebar = () => {
     <div className="modal">
 
       <div className="overlay">
-      <img src={x} className='icon' onClick={toggleModal}/>
-        <Login />
+        <Login toggleModal={toggleModal}/>
       </div>
     </div>
     )}

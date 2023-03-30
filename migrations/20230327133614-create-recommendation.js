@@ -33,8 +33,8 @@ module.exports = {
           key: 'id'
         }
       },
-      malAnimeId: Sequelize.INTEGER,
-      malRecommendedId: Sequelize.INTEGER,
+      animeName: Sequelize.STRING,
+      recommendedName: Sequelize.STRING,
       body: {
         type: Sequelize.STRING
       },

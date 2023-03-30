@@ -53,6 +53,7 @@ function App() {
           <Route path="/search/:search" element={<SearchDetails/>} />
           <Route path="/profile/:id" element={<PersonalPage/>}/>
           <Route path="/user/:id" element={<UserDetails/>}/>
+          <Route path='/register' element={<Register/>}/>
         </Routes>
       </CurrentMalId.Provider>
       </main>

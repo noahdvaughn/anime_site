@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
 import { useNavigate, Link } from 'react-router-dom'
+import x from '../assets/x.png'
 
 
-const Login = ( ) => {
+
+const Login = ( {toggleModal}) => {
   
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
@@ -24,6 +26,8 @@ const Login = ( ) => {
   }
 
   return <div className="reviewDiv">
+      <img src={x} className='icon' onClick={toggleModal}/>
+
      <form className="" onSubmit={handleSubmit}>
             <div className="flex">
               <label className="noDec" htmlFor="email"></label>
@@ -58,7 +62,7 @@ const Login = ( ) => {
             <button className="signInButton" onClick={guestLogin}>
               Guest Login
             </button>
-            <Link to='/register'>
+            <Link to='/register' onClick={toggleModal}>
             <h1>New User? Sign Up Here</h1>
             
             </Link>
