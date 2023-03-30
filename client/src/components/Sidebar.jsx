@@ -29,17 +29,10 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
     <img src={userPic} className='icon'/>
     <p>Profile</p>
     </Link>
-    <div onClick={toggleModal}>
+    <div onClick={handleLogOut}>
     <img src={logout} className='icon'/>
     <p>Sign-Out</p>
     </div>
-    {modal && (
-    <div className="modal">
-      <div className="overlay">
-        <Login toggleModal={toggleModal} setUser={setUser}/>
-      </div>
-    </div>
-    )}
       </>
 
 
