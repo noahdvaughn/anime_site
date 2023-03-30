@@ -5,13 +5,14 @@ import { MakeReview } from '../services/review'
 
 
 
-const CreateReview = ({id, name, year, genre, user, toggleModal }) => {
+const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, written }) => {
   let genreArray = []
   genre.forEach((genre)=>{
     genreArray.unshift(genre.name)
   })
   const initialState = {
     userId: user.id,
+    userName: user.name,
     animeId: id,
     animeName: name,
     body: '',
@@ -31,6 +32,7 @@ const CreateReview = ({id, name, year, genre, user, toggleModal }) => {
     await MakeReview(formState)
 
     setFormState(initialState)
+    setWritten(!written)
 
     toggleModal()
   }

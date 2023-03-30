@@ -22,7 +22,7 @@ const Home = ({user}) => {
     <h1>
       Home
     </h1>
-    {seasonalAnime.length === 0 ? (<>bad</>) : 
+    {seasonalAnime.length === 0 ? (<>Loading...</>) : 
     (<div>
       {seasonalAnime.data.map((anime)=>(
       <AnimeCard anime={anime.node} key={anime.node.id}/>

@@ -8,8 +8,9 @@ import CreateReview from "./CreateReview"
 const AnimeDetails = ({user}) => {
   const {animeId, animeName} = useParams()
   const [details, setDetails] = useState()
-  const [data, setData] = useState()
+  const [data, setData] = useState(null)
   const [modal, setModal] = useState(false)
+  const [written, setWritten] = useState(false)
 
   useEffect(()=>{
     const grabDetails = async(animeId) => {
@@ -29,7 +30,7 @@ const AnimeDetails = ({user}) => {
   
 
 
-  return <div c>
+  return <div >
     {details ? (
       <div className="animeDetailsBody">
 
@@ -54,8 +55,6 @@ const AnimeDetails = ({user}) => {
           <h3>{details.data.num_episodes} Episodes, {details.data.status.replaceAll('_', ' ')}</h3>
           <h3>{details.data.start_date}</h3>
         </div>
-
-        
       </div>
       <>
         <p>{details.data.synopsis}</p>
@@ -70,19 +69,23 @@ const AnimeDetails = ({user}) => {
     {modal && (
     <div className="modal">
       <div className="overlay">
-        <CreateReview id={animeId} name={animeName} year={details.data.start_date.slice(0,4)} genre={details.data.genres} user={user} toggleModal={toggleModal}/>
+        <CreateReview id={animeId} name={animeName} year={details.data.start_date.slice(0,4)} genre={details.data.genres} user={user} toggleModal={toggleModal} setWritten={setWritten} written={written}/>
       </div>
     </div>
     )}
 
-    {data.data.reviews.length === 0 ? (<></>) : (
-      <div>
+    {data ? (<>
         <h3>Reviews: </h3>
         <div>
           {data.data.reviews.map((review)=>(
-            <div></div>
+            <div>
+              <p>{review.userName}</p>
+              <p>{review.body}</p>
+            </div>
           ))}
         </div>
+    </>) : (
+      <div>
         </div>
       )}
     </div>
