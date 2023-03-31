@@ -9,7 +9,9 @@ const Register = async (req, res) => {
       email,
       password: passwordDigest,
       username: name,
-      profile_pic
+      profile_pic,
+      friend_list,
+      watched_list
     })
     res.send(user)
   } catch (error) {
@@ -29,7 +31,9 @@ const Login = async (req, res) => {
         id: user.id,
         email: user.email,
         name: user.username,
-        pic: user.profile_pic
+        pic: user.profile_pic,
+        friends: user.friend_list,
+        watched: user.watched_list
       }
       let token = middleware.createToken(payload)
       return res.send({ user: payload, token })
@@ -56,7 +60,11 @@ const UpdatePassword = async (req, res) => {
       await user.update({ passwordDigest })
       let payload = {
         id: user.id,
-        email: user.email
+        email: user.email,
+        name: user.username,
+        pic: user.profile_pic,
+        friends: user.friend_list,
+        watched: user.watched_list
       }
       return res.send({ status: 'Password Updated!', user: payload })
     }

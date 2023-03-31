@@ -19,5 +19,5 @@ export const UpdateReview = async (id, data) => {
   await Client.put(`/review/update/${id}`, data)
 }
 export const DeleteReview = async (id) => {
-  await Client.delete(`/review/update/${id}`)
+  await Client.delete(`/review/delete/${id}`)
 }

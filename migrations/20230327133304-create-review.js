@@ -39,7 +39,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       genre: {
-        type: Sequelize.STRING
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       createdAt: {
         allowNull: false,

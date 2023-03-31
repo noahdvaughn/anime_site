@@ -19,7 +19,9 @@ const Register = ( ) => {
       name: formValues.name,
       email: formValues.email,
       password: formValues.password,
-      profile_pic: 'https://freesvg.org/img/abstract-user-flat-4.png'
+      profile_pic: 'https://freesvg.org/img/abstract-user-flat-4.png',
+      friend_list: [],
+      watched_list: []
     })
     navigate('/')
   }

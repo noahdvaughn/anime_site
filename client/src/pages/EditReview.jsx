@@ -26,6 +26,8 @@ const EditReview = ({review, toggleEditing, setWritten, written}) => {
   const handleDelete = async (event) => {
     event.preventDefault()
     await DeleteReview(review.id)
+    setWritten(!written)
+    toggleEditing()
   }
 
 
@@ -67,7 +69,7 @@ const EditReview = ({review, toggleEditing, setWritten, written}) => {
       />
       <button type="submit">Update Review</button>
     </form>
-    <button >Delete Review?</button>
+    <button onClick={handleDelete}>Delete Review?</button>
 </div>
 }
 export default EditReview

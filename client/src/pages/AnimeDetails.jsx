@@ -74,7 +74,7 @@ const AnimeDetails = ({user}) => {
     {modal && (
     <div className="modal">
       <div className="overlay">
-        <EditReview id={animeId} name={animeName} year={details.data.start_date.slice(0,4)} genre={details.data.genres} user={user} toggleModal={toggleModal} setWritten={setWritten} written={written}/>
+        <CreateReview id={animeId} name={animeName} year={details.data.start_date.slice(0,4)} genre={details.data.genres} user={user} toggleModal={toggleModal} setWritten={setWritten} written={written}/>
       </div>
     </div>
     )}

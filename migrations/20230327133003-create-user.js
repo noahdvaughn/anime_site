@@ -21,6 +21,12 @@ module.exports = {
       profile_pic: {
         type: Sequelize.STRING
       },
+      friend_list: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
+      },
+      watched_list: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
