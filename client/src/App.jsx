@@ -24,7 +24,6 @@ function App() {
   const [user, setUser] = useState(null)
 
   const handleLogOut = () => {
-    
     setUser(null)
     localStorage.clear()
   }
@@ -35,7 +34,6 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-
     if (token) {
       checkToken()
     }
@@ -50,7 +48,7 @@ function App() {
       <CurrentMalId.Provider value={CurrentMalId}>
         <Routes>
           <Route path="/" element={<Home user={user}/>}/>
-          <Route path="/details/:animeName/:animeId" element={<AnimeDetails user={user}/>}/>
+          <Route path="/details/:animeName/:animeId" element={<AnimeDetails user={user} setUser={setUser}/>}/>
           <Route path="/search/:search" element={<SearchDetails/>} />
           <Route path="/profile/:id" element={<PersonalPage user={user}/>}/>
           <Route path="/user/:id" element={<UserDetails/>}/>

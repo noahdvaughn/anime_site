@@ -6,6 +6,11 @@ body{
   padding-left: 8vw;
   padding-top: 10vh;
 }
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #plug{
   width: 50px;
   margin: 0;
@@ -103,4 +108,27 @@ main{
 .reviewLink{
   display: flex;
   color: beige;
+}
+.xdiv{
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: row;
+  height: 50px;
+  width: 300px;
+}
+.loginX{
+ 
+}
+.loginDiv{
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+.loginTitle{
+
+}
+.loginForm{
+  width: 200px;
 }

@@ -17,7 +17,7 @@ const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, writ
     userId: user.id,
     userName: user.name,
     userPic: user.pic,
-    animeId: id,
+    animeId: parseInt(id),
     animeName: name,
     body: '',
     rating: '',

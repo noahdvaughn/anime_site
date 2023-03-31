@@ -27,10 +27,15 @@ const Login = ( {toggleModal, setUser}) => {
     handleSubmit(e)
   }
 
-  return <div className="reviewDiv">
-      <img src={x} className='icon' onClick={toggleModal}/>
+  return <div className="loginDiv">
 
-     <form className="" onSubmit={handleSubmit}>
+    <div className="flex xdiv">
+      <img src={x} className='icon loginX' onClick={toggleModal}/>
+    </div>
+
+    <div className='flex'>
+    <h3 className='loginTitle'>Login</h3>
+     <form className="loginForm" onSubmit={handleSubmit}>
             <div className="flex">
               <label className="noDec" htmlFor="email"></label>
               <input
@@ -55,6 +60,7 @@ const Login = ( {toggleModal, setUser}) => {
                 required
               />
             </div>
+            <div className='flex'>
             <button
               className="signInButton"
               disabled={!formValues.email || !formValues.password}
@@ -64,11 +70,15 @@ const Login = ( {toggleModal, setUser}) => {
             <button className="signInButton" onClick={guestLogin}>
               Guest Login
             </button>
+              
+            </div>
+            </form>
+    </div>
             <Link to='/register' onClick={toggleModal}>
-            <h1>New User? Sign Up Here</h1>
+            <p>New User? Sign Up Here</p>
             
             </Link>
-            </form>
+
   </div>
 }
 export default Login

@@ -10,8 +10,8 @@ const Register = async (req, res) => {
       password: passwordDigest,
       username: name,
       profile_pic,
-      friend_list,
-      watched_list
+      friend_list: [],
+      watched_list: []
     })
     res.send(user)
   } catch (error) {
@@ -95,11 +95,41 @@ const GetUser = async (req, res) => {
     throw error
   }
 }
+const UpdateUser = async (req, res) => {
+  try {
+    let userId = parseInt(req.params.userId)
+    // const user = await User.findByPk(userId)
+
+    const updatedUser = await User.update(
+      { ...req.body },
+      {
+        where: { id: userId },
+        returning: true
+      }
+    )
+    if (updatedUser[1][0].dataValues) {
+      console.log(updatedUser.dataValues)
+      let payload = {
+        id: updatedUser[1][0].dataValues.id,
+        email: updatedUser[1][0].dataValues.email,
+        name: updatedUser[1][0].dataValues.username,
+        pic: updatedUser[1][0].dataValues.profile_pic,
+        friends: updatedUser[1][0].dataValues.friend_list,
+        watched: updatedUser[1][0].dataValues.watched_list
+      }
+      return res.send({ status: 'Watched Updated!', user: payload })
+    }
+    res.status(401).send('error')
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   Login,
   Register,
   UpdatePassword,
   CheckSession,
-  GetUser
+  GetUser,
+  UpdateUser
 }

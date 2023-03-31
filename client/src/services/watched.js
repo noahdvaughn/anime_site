@@ -5,7 +5,7 @@ export const GetWatchedByUserId = async (id) => {
   return watched
 }
 
-export const CreateReview = async (id, data) => {
+export const CreateWatched = async (id, data) => {
   await Client.post(`/watched/create/${id}`, data)
 }
 export const UpdateWatched = async (id, data) => {

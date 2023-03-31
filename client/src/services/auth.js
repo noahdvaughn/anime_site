@@ -31,9 +31,16 @@ export const CheckSession = async () => {
 }
 export const GetSingleUser = async (id) => {
   try {
-    const user = await Client.get(`/user/${id}`)
+    const user = await Client.get(`/auth/user/${id}`)
     return user
   } catch (error) {
     throw error
   }
+}
+export const UpdateUser = async (id, data) => {
+  try {
+    const user = await Client.put(`/auth/update/${id}`, data)
+    localStorage.setItem('token', user.data.token)
+    return user
+  } catch (error) {}
 }

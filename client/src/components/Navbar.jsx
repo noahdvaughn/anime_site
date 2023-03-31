@@ -7,6 +7,9 @@ const Navbar = ({user, handleLogOut}) => {
   <header>
     <img id='plug'src={plug}/>
     <h1>navtest</h1>
+    <div>
+      <input type="text" /> 
+    </div>
   </header>
   </div>)
 }

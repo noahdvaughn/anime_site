@@ -4,7 +4,6 @@ import { GetSeasonal } from '../services/anime'
 import AnimeCard from '../components/AnimeCard'
 
 const Home = ({user}) => {
-  console.log(user)
   const [seasonalAnime, setSeasonalAnime] = useState([])
   
   

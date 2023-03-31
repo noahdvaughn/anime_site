@@ -4,9 +4,11 @@ import { GetDetails } from "../services/anime"
 import { GetAllByAnimeId } from "../services/recommended"
 import CreateReview from "./CreateReview"
 import EditReview from "./EditReview"
+import { UpdateUser } from "../services/auth"
+import { CreateWatched } from "../services/watched"
 
 
-const AnimeDetails = ({user}) => {
+const AnimeDetails = ({user,setUser}) => {
   const {animeId, animeName} = useParams()
   const [details, setDetails] = useState()
   const [data, setData] = useState(null)
@@ -14,6 +16,7 @@ const AnimeDetails = ({user}) => {
   const [edit, setEdit] = useState(false)
   const [written, setWritten] = useState(false)
   const [currentReview, setCurrentReview] = useState() 
+  const [newUser, setNewUser] = useState(null)
 
   useEffect(()=>{
     const grabDetails = async(animeId) => {
@@ -25,16 +28,33 @@ const AnimeDetails = ({user}) => {
     grabDataByAnime(animeId)
     grabDetails(animeId)
   },[written])
+
+  useEffect(()=>{
+    console.log(newUser)
+    if (newUser){
+      console.log(newUser)
+      setUser(newUser.data.user)
+    }
+  }, [newUser])
   
   const toggleModal = () => {
     setModal(!modal)
   }
   const toggleEditing = () => {
-    
-
     setEdit(!edit)
   }
-  console.log(data)
+  const addToWatched = async() => {
+    let newWatched = await CreateWatched(user.id, {
+      userId: user.id,
+      animeId: parseInt(animeId),
+      animeName: animeName
+    })
+    setNewUser(await UpdateUser(user.id, {
+      watched_list: [...user.watched, animeId]
+    }))
+    setWritten(!written)
+  }
+  console.log(user)
   
 
 
@@ -48,13 +68,13 @@ const AnimeDetails = ({user}) => {
           <h2>{details.data.alternative_titles.ja}</h2>
           <div>
             {details.data.genres.map((genre)=>(
-              <p>{genre.name}</p>
+              <p key={genre.name}>{genre.name}</p>
             ))}
           </div>
           <div style={{display: 'flex'}}>
             <p>Studios: </p>
             {details.data.studios.map((studio)=>(
-              <p>{studio.name}</p>
+              <p key={studio.name}>{studio.name}</p>
             ))}
           </div>
           <h3>{details.data.num_episodes} Episodes, {details.data.status.replaceAll('_', ' ')}</h3>
@@ -68,9 +88,21 @@ const AnimeDetails = ({user}) => {
     ) : 
     (<></>)}
 
+
+
     {user ? (
-    <button onClick={toggleModal}>Make A Review</button>
-    ): (<p>Log in to make a review</p>)}
+      user && user.watched.includes(parseInt(animeId)) ? (
+        <div className="flex">
+          <h3>Anime Seen!</h3>
+          <button onClick={toggleModal}>Make A Review</button>
+        </div>
+      ) : (
+        <div className="flex">
+          <button onClick={addToWatched}>Add to watched</button>
+        </div>
+      )
+      
+    ): (<p>Log in to add to your watched list and make a review</p>)}
     {modal && (
     <div className="modal">
       <div className="overlay">
@@ -81,6 +113,7 @@ const AnimeDetails = ({user}) => {
 
     {data ? (<>
         <h3>Reviews: </h3>
+          {data.data.reviews.length === 0 ? (<h3>None yet</h3>) : (<></>)}
         <div>
           {data.data.reviews.map((review)=>(
             <div className="review">
@@ -90,6 +123,8 @@ const AnimeDetails = ({user}) => {
               </Link>
               <p className="reviewComment">{review.body}</p>
               <p className="reviewRating">{review.rating}/10</p>
+
+
               { user && (user.id === review.userId || user.id === 1) ? (<button onClick={()=>{setCurrentReview(review), toggleEditing()}}>Edit Review?</button>) : (<div></div>) }
               {edit && (
                 <div className="modal">
