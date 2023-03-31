@@ -19,7 +19,7 @@ const Register = ( ) => {
       name: formValues.name,
       email: formValues.email,
       password: formValues.password,
-      profile_pic: 'https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg≈'
+      profile_pic: 'https://freesvg.org/img/abstract-user-flat-4.png'
     })
     navigate('/')
   }

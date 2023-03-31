@@ -1,11 +1,14 @@
 import x from '../assets/x.png'
 import { useEffect, useState } from "react"
 import { MakeReview } from '../services/review'
+import {Link, useNavigate} from 'react-router-dom'
+
 
 
 
 
 const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, written }) => {
+
   let genreArray = []
   genre.forEach((genre)=>{
     genreArray.unshift(genre.name)
@@ -13,6 +16,7 @@ const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, writ
   const initialState = {
     userId: user.id,
     userName: user.name,
+    userPic: user.pic,
     animeId: id,
     animeName: name,
     body: '',
@@ -33,7 +37,6 @@ const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, writ
 
     setFormState(initialState)
     setWritten(!written)
-
     toggleModal()
   }
 
@@ -52,16 +55,16 @@ const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, writ
           onChange={handleChange}
           value={formState.rating}
         >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+          <option value={6}>6</option>
+          <option value={7}>7</option>
+          <option value={8}>8</option>
+          <option value={9}>9</option>
+          <option value={10}>10</option>
         </select>
         <label htmlFor="comment">
           Comment

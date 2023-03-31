@@ -84,3 +84,23 @@ main{
   align-items: center;
   background-color: grey;
 }
+.review{
+  display: flex;
+  justify-content: flex-start;
+  height: 50px;
+  align-items: center;
+  padding: 10px;
+}
+.reviewName{
+  margin-right:10px;
+}
+.reviewComment{
+  margin: 0 10px;
+}
+.reviewUser{
+  max-width: 50px;
+}
+.reviewLink{
+  display: flex;
+  color: beige;
+}

@@ -8,6 +8,7 @@ const PersonalPage = ({user}) => {
 
   return <div>
     <h1>Hello, {user.name}</h1>
+    <img src={`${user.pic}`}/>
   </div>
 }
 export default PersonalPage
