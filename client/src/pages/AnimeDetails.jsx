@@ -13,6 +13,7 @@ const AnimeDetails = ({user}) => {
   const [modal, setModal] = useState(false)
   const [edit, setEdit] = useState(false)
   const [written, setWritten] = useState(false)
+  const [currentReview, setCurrentReview] = useState() 
 
   useEffect(()=>{
     const grabDetails = async(animeId) => {
@@ -29,6 +30,8 @@ const AnimeDetails = ({user}) => {
     setModal(!modal)
   }
   const toggleEditing = () => {
+    
+
     setEdit(!edit)
   }
   console.log(data)
@@ -87,11 +90,11 @@ const AnimeDetails = ({user}) => {
               </Link>
               <p className="reviewComment">{review.body}</p>
               <p className="reviewRating">{review.rating}/10</p>
-              {user.id === review.userId || user.id === 1 ? (<button onClick={toggleEditing}>Edit Review?</button>) : (<div></div>) }
+              { user && (user.id === review.userId || user.id === 1) ? (<button onClick={()=>{setCurrentReview(review), toggleEditing()}}>Edit Review?</button>) : (<div></div>) }
               {edit && (
                 <div className="modal">
                   <div className="overlay">
-                    <EditReview  review={review} user={user} toggleEditing={toggleEditing} setWritten={setWritten} written={written}/>
+                    <EditReview  review={currentReview} user={user} toggleEditing={toggleEditing} setWritten={setWritten} written={written}/>
                   </div>
                 </div>)}
             </div>

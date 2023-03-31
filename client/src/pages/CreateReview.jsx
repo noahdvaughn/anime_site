@@ -76,7 +76,6 @@ const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, writ
           onChange={handleChange}
           value={formState.body}
         />
-
         <button type="submit">Submit Review</button>
       </form>
   </div>
