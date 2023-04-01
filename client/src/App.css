@@ -31,6 +31,16 @@ header{
   left: 0;
   top: 0;
   position: fixed;
+  justify-content: space-between;
+
+}
+.headerSearch{
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+}
+.headerInput{
+  width: 30vw;
 }
 .Sidebar{
   background-color: black;
@@ -43,6 +53,12 @@ header{
   position:fixed;
   left: 0;
   
+}
+.sidebarLink{
+  color: white;
+}
+.sidebarLink:hover{
+  color: pink;
 }
 main{
   display: flex;
@@ -76,7 +92,6 @@ main{
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  
 }
 .detailsColumn{
   display: flex;
@@ -131,4 +146,67 @@ main{
 }
 .loginForm{
   width: 200px;
+}
+.homeImage{
+  height: 300px;
+  width: 800px;
+  object-fit: cover;
+}
+@keyframes slide {
+  0% {
+    margin-left: 0px;
+  }
+  50%{
+    margin-left: -3300px
+
+  }
+  100%{
+    margin-left: 0px;
+  }
+}
+.homeRow{
+  display: flex;
+  overflow-x: hidden;
+  animation: slide infinite 120s linear;
+}
+.homeDiv{
+  width: 92vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* align-items: center; */
+}
+.homeCenterAnime{
+  display: flex;
+  align-items: center;
+}
+.homeCenterAnimeText{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  height: 300px;
+}
+.homeCenterBody{
+  overflow-y: auto;
+}
+.homeImage{
+  margin-bottom: 10px;
+}
+.animeCardPic{
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+.animeCardTitle{
+  /* width: 20vw; */
+  height: 10vh;
+}
+.animeCardDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* align-content: center; */
+  margin-right: 20px;
 }

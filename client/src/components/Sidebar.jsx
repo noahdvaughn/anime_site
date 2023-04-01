@@ -20,11 +20,11 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
 
   return(
   <div className='Sidebar'>
-    <Link to='/'>
+    <Link  className='sidebarLink' to='/'>
     <img src={house} className='icon'/>
     <p>Home</p>
     </Link>
-    <Link to='/recommendations'>
+    <Link className='sidebarLink' to='/recommendations'>
     <img src={pencil} className='icon'/>
     <p>Recs</p>
     </Link>
@@ -33,7 +33,7 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
 
     {user ? (
       <>
-    <Link to={`/profile/${user.id}`}>
+    <Link className='sidebarLink' to={`/profile/${user.id}`}>
     <img src={userPic} className='icon'/>
     <p>Profile</p>
     </Link>
@@ -44,11 +44,11 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
       </>
     ) : (
       <>
-    <Link to={`/register`}>
+    <Link className='sidebarLink' to={`/register`}>
     <img src={folder} className='icon'/>
     <p>Register</p>
     </Link>
-    <div onClick={toggleModal}>
+    <div onClick={toggleModal} className='sidebarLink'>
     <img src={login} className='icon'/>
     <p>Sign-In</p>
     </div>

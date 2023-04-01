@@ -35,6 +35,7 @@ const GetAnimeDetails = async (req, res) => {
 }
 const SearchAnime = async (req, res) => {
   const { searchQuery } = req.params
+  console.log('hiiiiiiittttttt')
   try {
     let animeDetails = await axios.get(
       `https://api.myanimelist.net/v2/anime?q=${searchQuery}&limit=10`,
