@@ -74,11 +74,6 @@ const Login = ( {toggleModal, setUser}) => {
             </div>
             </form>
     </div>
-            <Link to='/register' onClick={toggleModal}>
-            <p>New User? Sign Up Here</p>
-            
-            </Link>
-
   </div>
 }
 export default Login

@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterUser } from '../services/Auth'
+import x from '../assets/x.png'
 
-const Register = ( ) => {
+
+const Register = ( {toggleRegistering}) => {
   let navigate = useNavigate()
   const [formValues, setFormValues] = useState({
     name: '',
@@ -23,10 +25,17 @@ const Register = ( ) => {
       friend_list: [],
       watched_list: []
     })
-    navigate('/')
+    toggleRegistering()
   }
 
-  return <div>
+  return<div className="loginDiv">
+
+  <div className="flex xdiv">
+    <img src={x} className='icon loginX' onClick={toggleRegistering}/>
+  </div>
+
+  <div className='flex'>
+  <h3 className='loginTitle'>Register</h3>
     <form onSubmit={handleSubmit}>
           <div>
             <input
@@ -84,7 +93,7 @@ const Register = ( ) => {
             Register User
           </button>
         </form>
-
+        </div>
   </div>
 }
 export default Register
