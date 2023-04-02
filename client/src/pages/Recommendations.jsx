@@ -37,7 +37,21 @@ const Recommendations = () => {
             <img src={rec.userPic} className='reviewUser'/>
             <p>{rec.userName}</p>
             </Link>
-            
+
+            <div>
+              <p>If you like...</p>
+              <img src={rec.animePic} className='recAnimePic'/>
+            </div>
+
+            <h3>{rec.body}</h3>
+
+            <div>
+              <p>You'll like</p>
+              <img src={rec.recommendedPic} className='recAnimePic'/>
+            </div>
+
+
+
           </div>
         ))}
       </div>

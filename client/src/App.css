@@ -228,3 +228,6 @@ main{
   width: 25px;
   filter: grayscale(30%);
 }
+.recAnimePic{
+  max-width: 150px;
+}

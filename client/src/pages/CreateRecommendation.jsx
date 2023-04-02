@@ -37,10 +37,10 @@ const CreateRecommendation = ({watched, user, toggleWritingRec, setWritten, writ
     await CreateRec({...formState, 
       animeId: watched[referenceIds.anime1Ref].id, 
       animeName: watched[referenceIds.anime1Ref].animeName,
-      animePic: watched[referenceIds.anime1Ref].animeName,
+      animePic: watched[referenceIds.anime1Ref].animePic,
       recommendedId: watched[referenceIds.anime2Ref].id, 
       recommendedName: watched[referenceIds.anime2Ref].animeName,
-      recommendedPic: watched[referenceIds.anime2Ref].animeName,
+      recommendedPic: watched[referenceIds.anime2Ref].animePic,
     })
     setFormState(initialState)
     setWritten(!written)
