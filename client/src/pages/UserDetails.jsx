@@ -62,7 +62,14 @@ const UserDetails = ({ user, setUser  }) => {
       </div>
       <div>
         {userDetails &&  user &&(user.id === userDetails.data.id) ? (<button onClick={toggleWritingRec}>Make Recommendation?</button>) : (<div></div>) }
-        {writingRec ? (<CreateRecommendation/>) : (<div></div>)}
+        {writingRec ? (
+          <div className="modal">
+            <div className="overlay">
+            <CreateRecommendation user={user} watched={userData.data.watched} toggleWritingRec={toggleWritingRec} setWritten={setWritten} written={written}/>
+
+            </div>
+          </div>
+        ) : (<div></div>)}
       </div>
       </div>
 

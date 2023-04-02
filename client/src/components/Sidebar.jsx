@@ -42,7 +42,7 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
     <img src={userPic} className='icon'/>
     <p>Profile</p>
     </Link>
-    <div onClick={handleLogOut}>
+    <div onClick={handleLogOut} className='sidebarLink'>
     <img src={logout} className='icon'/>
     <p>Sign-Out</p>
     </div>
