@@ -24,7 +24,6 @@ const Login = ( {toggleModal, setUser}) => {
   const guestLogin = (e) => {
     e.preventDefault()
     setFormValues({ email: 'guest@guest', password: 'guest' })
-    handleSubmit(e)
   }
 
   return <div className="loginDiv">

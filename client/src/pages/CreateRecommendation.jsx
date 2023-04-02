@@ -1,5 +1,5 @@
 
-const CreateRecommendation = () => {
+const CreateRecommendation = ({watched}) => {
   return <div>
     <h1>CreateRecommendation</h1>
   </div>

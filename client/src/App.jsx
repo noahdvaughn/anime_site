@@ -49,7 +49,7 @@ function App() {
           <Route path="/" element={<Home user={user}/>}/>
           <Route path="/details/:animeName/:animeId" element={<AnimeDetails user={user} setUser={setUser}/>}/>
           <Route path="/search/:search" element={<SearchDetails/>} />
-          <Route path="/user/:id" element={<UserDetails/>}/>
+          <Route path="/user/:id" element={<UserDetails user={user} setUser={setUser}/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/recommendations' element={<Recommendations/>}/>
         </Routes>

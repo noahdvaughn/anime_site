@@ -30,9 +30,8 @@ const AnimeDetails = ({user,setUser}) => {
   },[written])
 
   useEffect(()=>{
-    console.log(newUser)
     if (newUser){
-      console.log(newUser)
+      
       setUser(newUser.data.user)
     }
   }, [newUser])
@@ -48,14 +47,12 @@ const AnimeDetails = ({user,setUser}) => {
       userId: user.id,
       animeId: parseInt(animeId),
       animeName: animeName,
-      animePic: details.data.main_picture_large
+      animePic: details.data.main_picture.large
     })
     setNewUser(await UpdateUser(user.id, {
       watched_list: [...user.watched, animeId]
     }))
-    setWritten(!written)
   }
-  console.log(user)
   
 
 
