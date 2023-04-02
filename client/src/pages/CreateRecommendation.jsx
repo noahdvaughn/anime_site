@@ -35,10 +35,10 @@ const CreateRecommendation = ({watched, user, toggleWritingRec, setWritten, writ
     console.log('hit')
     event.preventDefault()
     await CreateRec({...formState, 
-      animeId: watched[referenceIds.anime1Ref].id, 
+      animeId: watched[referenceIds.anime1Ref].animeId, 
       animeName: watched[referenceIds.anime1Ref].animeName,
       animePic: watched[referenceIds.anime1Ref].animePic,
-      recommendedId: watched[referenceIds.anime2Ref].id, 
+      recommendedId: watched[referenceIds.anime2Ref].animeId, 
       recommendedName: watched[referenceIds.anime2Ref].animeName,
       recommendedPic: watched[referenceIds.anime2Ref].animePic,
     })

@@ -40,14 +40,19 @@ const Recommendations = () => {
 
             <div>
               <p>If you like...</p>
+              <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`}>
               <img src={rec.animePic} className='recAnimePic'/>
+              <p>{rec.animeName}</p>
+
+              </Link>
             </div>
 
-            <h3>{rec.body}</h3>
+            <h3>"{rec.body}"</h3>
 
             <div>
               <p>You'll like</p>
               <img src={rec.recommendedPic} className='recAnimePic'/>
+              <p>{rec.recommendedName}</p>
             </div>
 
 
