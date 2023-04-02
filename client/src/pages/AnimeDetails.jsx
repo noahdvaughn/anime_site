@@ -47,7 +47,8 @@ const AnimeDetails = ({user,setUser}) => {
     let newWatched = await CreateWatched(user.id, {
       userId: user.id,
       animeId: parseInt(animeId),
-      animeName: animeName
+      animeName: animeName,
+      animePic: details.data.main_picture_large
     })
     setNewUser(await UpdateUser(user.id, {
       watched_list: [...user.watched, animeId]
@@ -106,7 +107,7 @@ const AnimeDetails = ({user,setUser}) => {
     {modal && (
     <div className="modal">
       <div className="overlay">
-        <CreateReview id={animeId} name={animeName} year={details.data.start_date.slice(0,4)} genre={details.data.genres} user={user} toggleModal={toggleModal} setWritten={setWritten} written={written}/>
+        <CreateReview id={animeId} name={animeName} year={details.data.start_date.slice(0,4)} genre={details.data.genres} user={user} toggleModal={toggleModal} setWritten={setWritten} written={written} pic={details.data.main_picture_large}/>
       </div>
     </div>
     )}
