@@ -23,6 +23,9 @@ module.exports = {
       animeName: {
         type: Sequelize.STRING
       },
+      animePic: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

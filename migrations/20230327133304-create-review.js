@@ -20,6 +20,9 @@ module.exports = {
       animeId: {
         type: Sequelize.INTEGER
       },
+      animePic: {
+        type: Sequelize.INTEGER
+      },
       userName: {
         type: Sequelize.STRING
       },

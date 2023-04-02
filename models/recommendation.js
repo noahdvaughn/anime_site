@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       userName: DataTypes.STRING,
       userPic: DataTypes.STRING,
       animeName: DataTypes.STRING,
+      animePic: DataTypes.STRING,
       recommendedName: DataTypes.STRING,
       body: DataTypes.STRING,
       upvotes: DataTypes.INTEGER,

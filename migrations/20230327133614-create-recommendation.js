@@ -25,6 +25,7 @@ module.exports = {
       },
       userName: Sequelize.STRING,
       userPic: Sequelize.STRING,
+      animePic: Sequelize.STRING,
       animeName: Sequelize.STRING,
       recommendedName: Sequelize.STRING,
       body: {
