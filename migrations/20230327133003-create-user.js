@@ -30,6 +30,12 @@ module.exports = {
       watched_list: {
         type: Sequelize.ARRAY(Sequelize.INTEGER)
       },
+      upvoted: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
+      },
+      downvoted: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

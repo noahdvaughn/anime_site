@@ -12,7 +12,9 @@ const Register = async (req, res) => {
       profile_pic,
       bio,
       friend_list: [],
-      watched_list: []
+      watched_list: [],
+      upvoted: [],
+      downvoted: []
     })
     res.send(user)
   } catch (error) {
@@ -34,7 +36,9 @@ const Login = async (req, res) => {
         name: user.username,
         pic: user.profile_pic,
         friends: user.friend_list,
-        watched: user.watched_list
+        watched: user.watched_list,
+        upvoted: user.upvoted,
+        downvoted: user.downvoted
       }
       let token = middleware.createToken(payload)
       return res.send({ user: payload, token })
@@ -116,7 +120,9 @@ const UpdateUser = async (req, res) => {
         name: updatedUser[1][0].dataValues.username,
         pic: updatedUser[1][0].dataValues.profile_pic,
         friends: updatedUser[1][0].dataValues.friend_list,
-        watched: updatedUser[1][0].dataValues.watched_list
+        watched: updatedUser[1][0].dataValues.watched_list,
+        upvoted: updatedUser[1][0].dataValues.upvoted,
+        downvoted: updatedUser[1][0].dataValues.downvoted
       }
       return res.send({ status: 'Watched Updated!', user: payload })
     }

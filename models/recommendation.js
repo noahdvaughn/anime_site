@@ -32,6 +32,8 @@ module.exports = (sequelize, DataTypes) => {
       animeName: DataTypes.STRING,
       animePic: DataTypes.STRING,
       recommendedName: DataTypes.STRING,
+      recommendedPic: DataTypes.STRING,
+
       body: DataTypes.STRING,
       upvotes: DataTypes.INTEGER,
       downvotes: DataTypes.INTEGER

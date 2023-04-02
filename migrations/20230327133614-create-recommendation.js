@@ -28,6 +28,8 @@ module.exports = {
       animePic: Sequelize.STRING,
       animeName: Sequelize.STRING,
       recommendedName: Sequelize.STRING,
+      recommendedPic: Sequelize.STRING,
+
       body: {
         type: Sequelize.STRING
       },

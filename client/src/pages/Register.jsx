@@ -24,7 +24,9 @@ const Register = ( {toggleRegistering}) => {
       bio: 'user has no bio yet',
       profile_pic: 'https://freesvg.org/img/abstract-user-flat-4.png',
       friend_list: [],
-      watched_list: []
+      watched_list: [],
+      upvoted: [],
+      downvoted: []
     })
     toggleRegistering()
   }
