@@ -38,7 +38,7 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
 
     {user ? (
       <>
-    <Link className='sidebarLink' to={`/profile/${user.id}`}>
+    <Link className='sidebarLink' to={`/user/${user.id}`}>
     <img src={userPic} className='icon'/>
     <p>Profile</p>
     </Link>

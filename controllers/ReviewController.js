@@ -1,4 +1,7 @@
 const { Review } = require('../models')
+const { Watched } = require('../models')
+const { Recommendation } = require('../models')
+
 const GetReviews = async (req, res) => {
   try {
     const reviews = await Review.findAll()
@@ -13,7 +16,13 @@ const GetReviewsByUserId = async (req, res) => {
     const reviews = await Review.findAll({
       where: { userId: userId }
     })
-    res.status(200).send(reviews)
+    const watch = await Watched.findAll({
+      where: { userId: userId }
+    })
+    const recs = await Recommendation.findAll({
+      where: { userId: userId }
+    })
+    res.status(200).send({ reviews: reviews, watched: watch, recs: recs })
   } catch (error) {
     throw error
   }

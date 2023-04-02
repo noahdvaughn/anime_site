@@ -1,9 +1,9 @@
 import Client from './api'
 
-export const GetWatchedByUserId = async (id) => {
-  const watched = await Client.get(`/watched/by-user/${id}`)
-  return watched
-}
+// export const GetWatchedByUserId = async (id) => {
+//   const watched = await Client.get(`/watched/by-user/${id}`)
+//   return watched
+// }
 
 export const CreateWatched = async (id, data) => {
   await Client.post(`/watched/create/${id}`, data)
