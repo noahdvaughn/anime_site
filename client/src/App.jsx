@@ -7,7 +7,6 @@ import Sidebar from './components/Sidebar'
 import Home from './pages/Home'
 import AnimeDetails from './pages/AnimeDetails'
 import SearchDetails from './pages/SearchDetails'
-import PersonalPage from './pages/PersonalPage'
 import UserDetails from './pages/UserDetails'
 import Recommendations from './pages/Recommendations'
 import Register from './pages/Register'
@@ -50,7 +49,6 @@ function App() {
           <Route path="/" element={<Home user={user}/>}/>
           <Route path="/details/:animeName/:animeId" element={<AnimeDetails user={user} setUser={setUser}/>}/>
           <Route path="/search/:search" element={<SearchDetails/>} />
-          <Route path="/profile/:id" element={<PersonalPage user={user}/>}/>
           <Route path="/user/:id" element={<UserDetails/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/recommendations' element={<Recommendations/>}/>
