@@ -6,6 +6,6 @@ Router.get('/by-user/:userId', controller.GetRecsByUserId)
 Router.get('/all-by-anime/:animeId', controller.GetRecsAndRevsByAnimeId)
 Router.post('/create', controller.CreateRec)
 Router.put('/update/:recId', controller.UpdateRec)
-Router.delete('/delete/:redId', controller.DeleteRec)
+Router.delete('/delete/:recId', controller.DeleteRec)
 
 module.exports = Router

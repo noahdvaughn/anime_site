@@ -19,5 +19,5 @@ export const UpdateRec = async (id, data) => {
   await Client.put(`/rec/update/${id}`, data)
 }
 export const DeleteRec = async (id, data) => {
-  await Client.delete(`/rec/update/${id}`, data)
+  await Client.delete(`/rec/delete/${id}`, data)
 }

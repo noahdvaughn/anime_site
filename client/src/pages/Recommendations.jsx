@@ -5,6 +5,7 @@ import greenArrow from '../assets/arrow-xxl.png'
 import redArrow from '../assets/red-arrow.png'
 import { UpdateUser } from "../services/auth"
 import { UpdateRec } from "../services/recommended"
+import EditRecommendation from "./EditRecommendation"
 
 
 
@@ -12,6 +13,8 @@ const Recommendations = ({user, setUser}) => {
   const [recs, setRecs] = useState(null)
   const [written, setWritten] = useState(false)
   const [newUser, setNewUser] = useState(null)
+  const [editingRec, setEditingRec] = useState(null)
+  const [currentRec, setCurrentRec] = useState(null)
 
   useEffect(()=>{
     if (newUser){
@@ -24,6 +27,9 @@ const Recommendations = ({user, setUser}) => {
     }
     grabRecs()
   },[written])
+  const toggleEditingRec = () => {
+    setEditingRec(!editingRec)
+  }
 
   const userUpvote = async(recId, upvotes) => {
 
@@ -75,6 +81,9 @@ const Recommendations = ({user, setUser}) => {
             }}/>
             <p>{rec.downvotes}</p>
             </div>
+            { user && rec.userId === user.id ? (<button onClick={()=>{
+              setCurrentRec(rec), toggleEditingRec()
+            }}>Edit Rec</button>): (<></>)}
             </div>
 
             <Link to={`/user/${rec.userId}`} className='column white'>
@@ -101,6 +110,13 @@ const Recommendations = ({user, setUser}) => {
               
               </Link>
             </div>
+            {editingRec ? (
+              <div className="modal">
+                <div className="overlay">
+                <EditRecommendation rec={currentRec} toggleEditingRec={toggleEditingRec} setWritten={setWritten} written={written}/>
+                </div>
+              </div>
+            ) : (<div></div>)}
 
 
 
