@@ -60,7 +60,7 @@ const AnimeDetails = ({user,setUser}) => {
     {details ? (
       <div className="animeDetailsBody">
       <div className="animeDetailsTop">
-        <img src={details.data.main_picture.large}/>
+        <img src={details.data.main_picture.large} className='detailsImage'/>
         <div className="detailsColumn">
           <h1>{details.data.title}</h1>
           <h2>{details.data.alternative_titles.ja}</h2>

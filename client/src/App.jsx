@@ -51,7 +51,7 @@ function App() {
           <Route path="/search/:search" element={<SearchDetails/>} />
           <Route path="/user/:id" element={<UserDetails user={user} setUser={setUser}/>}/>
           <Route path='/register' element={<Register/>}/>
-          <Route path='/recommendations' element={<Recommendations/>}/>
+          <Route path='/recommendations' element={<Recommendations user={user} setUser={setUser}/>}/>
         </Routes>
       </CurrentMalId.Provider>
       </main>
