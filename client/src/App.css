@@ -259,6 +259,14 @@ header{
   justify-content: space-between;
   align-items: center;
 }
+.userWatchedPic{
+  width: 50px;
+}
+.userColumn{
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
 
 
 

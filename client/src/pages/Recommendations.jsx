@@ -65,7 +65,7 @@ const Recommendations = ({user, setUser}) => {
     {recs ? (
       <div className="">
         {recs.data.map((rec)=>(
-          <div className="flex rec">
+          <div className="flex rec" key={rec.id}>
 
             <div className="column">
               <div className="flex">

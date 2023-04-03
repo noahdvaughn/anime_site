@@ -104,7 +104,7 @@ const AnimeDetails = ({user,setUser}) => {
     {modal && (
     <div className="modal">
       <div className="overlay">
-        <CreateReview id={animeId} name={animeName} year={details.data.start_date.slice(0,4)} genre={details.data.genres} user={user} toggleModal={toggleModal} setWritten={setWritten} written={written} pic={details.data.main_picture_large}/>
+        <CreateReview id={animeId} name={animeName} year={details.data.start_date.slice(0,4)} genre={details.data.genres} user={user} toggleModal={toggleModal} setWritten={setWritten} written={written} pic={details.data.main_picture.large}/>
       </div>
     </div>
     )}

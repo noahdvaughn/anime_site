@@ -12,6 +12,9 @@ const UserDetails = ({ user, setUser  }) => {
   const [written, setWritten] = useState(false)
   const [writingRec, setWritingRec] = useState(false)
   const [editingUser, setEditingUser] = useState(false)
+  const [viewingWatched, setViewingWatched] = useState(false)
+  const [viewingRecs, setViewingRecs] = useState(true)
+  const [viewingReviews, setViewingReviews] = useState(false)
   
   const toggleWritingRec = () => {
     setWritingRec(!writingRec)
@@ -29,7 +32,7 @@ const UserDetails = ({ user, setUser  }) => {
     }
     grabUserDetails(id)
   },[written])
-  console.log(userDetails)
+  // console.log(userDetails)
   console.log(userData)
   // console.log(userData.data.recs.length)
 
@@ -71,19 +74,45 @@ const UserDetails = ({ user, setUser  }) => {
         </div>
 
       </div>
+      <h1>watched, reviews, recs</h1>
+
+
       <div className="flex">
+
+        {viewingWatched ? (
+           <div className="userColumn">
+           <h1>watched</h1>
+           {userData.data.watched.length === 0 ? (<p>User has no watched</p>) : (<div>
+             {userData.data.watched.map((watched)=>(
+               <div>
+                 <img src={watched.animePic} className="userWatchedPic"/>
+                 <p>{watched.animeName}</p>
+               </div>
+             ))}
+           </div>)}
+         </div>
+ 
+        ) : (<></>)}
+
+       {viewingRecs ? (
         <div>
-          <h1>friends</h1>
+            {userData.data.reviews.length === 0 ? (<p>User has no watched</p>) : (<div>
+             {userData.data.reviews.map((review)=>(
+               <div>
+                 <img src={review.animePic} className="userWatchedPic"/>
+                 <p>{review.animeName}</p>
+               </div>
+             ))}
+           </div>)}
         </div>
-        <div>
-          <h1>watched</h1>
-        </div>
+
+       ) : (<></>)}
+       {viewingReviews ? (
         <div>
           <h1>recs</h1>
         </div>
-        <div>
-          <h1>Reviews</h1>
-        </div>
+
+       ) : (<></>)}
         
         {writingRec ? (
           <div className="modal">

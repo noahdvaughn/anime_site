@@ -8,6 +8,7 @@ import {Link, useNavigate} from 'react-router-dom'
 
 
 const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, written, pic }) => {
+  console.log(pic)
 
   let genreArray = []
   genre.forEach((genre)=>{
@@ -21,7 +22,7 @@ const CreateReview = ({id, name, year, genre, user, toggleModal,setWritten, writ
     animeName: name,
     animePic: pic,
     body: '',
-    rating: '',
+    rating: 1,
     yearCreated: parseInt(year),
     genre: genreArray
   }
