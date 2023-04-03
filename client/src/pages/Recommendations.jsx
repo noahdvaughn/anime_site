@@ -12,14 +12,6 @@ const Recommendations = ({user, setUser}) => {
   const [recs, setRecs] = useState(null)
   const [written, setWritten] = useState(false)
   const [newUser, setNewUser] = useState(null)
-  console.log(user)
-  let upvoteClass = 'recsArrow'
-
-
-
-  // if (user && user.upvotes.includes(recId)){
-    
-  // }
 
   useEffect(()=>{
     if (newUser){
@@ -34,7 +26,8 @@ const Recommendations = ({user, setUser}) => {
   },[written])
 
   const userUpvote = async(recId, upvotes) => {
-    if (user.upvotes.includes(recId)){
+
+    if (user.upvoted.includes(recId) || user.downvoted.includes(recId)){
       return
     } else {
     setNewUser(await UpdateUser(user.id, {
@@ -47,7 +40,7 @@ const Recommendations = ({user, setUser}) => {
 }
   const userDownvote = async(recId, downvotes) => {
 
-    if(user.downvotes.includes(recId)){
+    if(user.upvoted.includes(recId) || user.downvoted.includes(recId)){
       return
     } else {
    setNewUser( await UpdateUser(user.id, {
@@ -61,17 +54,17 @@ const Recommendations = ({user, setUser}) => {
 
   console.log(recs)
 
-  return <div>
+  return <div className="recBody">
     <h1>Top Recommendations</h1>
     {recs ? (
-      <div>
+      <div >
         {recs.data.map((rec)=>(
           <div className="flex">
-            <div className="column">
-            <img src={greenArrow} className='recsArrow' onClick={()=>{
+            <div className="recBody">
+            <img src={greenArrow} className={`recsArrow ${user && user.upvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
               userUpvote(rec.id, rec.upvotes)
             }}/>
-            <img src={redArrow} className={`recsArrow`} onClick={()=>{
+            <img src={redArrow} className={`recsArrow ${user && user.downvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
               userDownvote(rec.id, rec.downvotes)
             }}/>
             </div>
