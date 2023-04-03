@@ -1,6 +1,6 @@
 
 body{
-  background-color: grey;
+  background-color: #2d2d30;
   margin: 0;
   padding: 0;
   padding-left: 8vw;
@@ -8,6 +8,9 @@ body{
 }
 .white{
   color: white;
+}
+.white:hover{
+  color: pink;
 }
 .flex{
   display: flex;
@@ -137,25 +140,21 @@ header{
   display: flex;
   color: beige;
 }
-.xdiv{
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex-direction: row;
-  height: 50px;
-  width: 300px;
-}
 .loginX{
- 
+  margin-bottom: 0px;
+  margin-top: 0;
+  filter: drop-shadow(0px 0px 1px white);
 }
 .loginDiv{
-  background-color: gray;
+  background-color: #1e1e1e;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
 }
 .loginTitle{
-
+  padding: 5px;
 }
 .loginForm{
   width: 200px;
@@ -248,7 +247,22 @@ header{
   display: flex;
   flex-direction: column;
   align-content: center;
+  align-items: center;
   text-align: center;
+}
+.rec{
+  background-color: #1e1e1e;
+  margin-bottom: 20px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.recDetails{
+  /* overflow-x: scroll; */
+  overflow-wrap:break-word;
+  overflow-y: auto;
+  width: 15vw;
 }
 .votedOn{
   filter: drop-shadow(0px 0px 2px black) grayscale(20%); 

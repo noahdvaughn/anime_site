@@ -57,41 +57,45 @@ const Recommendations = ({user, setUser}) => {
   return <div className="recBody">
     <h1>Top Recommendations</h1>
     {recs ? (
-      <div >
+      <div className="">
         {recs.data.map((rec)=>(
-          <div className="flex">
-            <div className="recBody">
+          <div className="flex rec">
+
+            <div className="column">
+              <div className="flex">
             <img src={greenArrow} className={`recsArrow ${user && user.upvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
               userUpvote(rec.id, rec.upvotes)
             }}/>
+              <p>{rec.upvotes}</p>
+              </div>
+
+            <div className="flex">
             <img src={redArrow} className={`recsArrow ${user && user.downvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
               userDownvote(rec.id, rec.downvotes)
             }}/>
+            <p>{rec.downvotes}</p>
             </div>
-            <div className="column">
-              <p>{rec.upvotes}</p>
-              <p>{rec.downvotes}</p>
             </div>
 
-            <Link to={`/user/${rec.userId}`} className='column'>
+            <Link to={`/user/${rec.userId}`} className='column white'>
             <img src={rec.userPic} className='reviewUser'/>
             <p>{rec.userName}</p>
             </Link>
 
             <div>
               <p>If you like...</p>
-              <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`}>
+              <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`} className='white'>
               <img src={rec.animePic} className='recAnimePic'/>
               <p>{rec.animeName}</p>
 
               </Link>
             </div>
 
-            <h3>"{rec.body}"</h3>
+            <h3 className="recDetails">"{rec.body}"</h3>
 
             <div>
               <p>You'll like</p>
-              <Link to={`/details/${encodeURIComponent(rec.recommendedName)}/${rec.recommendedId}`}>
+              <Link to={`/details/${encodeURIComponent(rec.recommendedName)}/${rec.recommendedId}`} className='white'>
               <img src={rec.recommendedPic} className='recAnimePic'/>
               <p>{rec.recommendedName}</p>
               

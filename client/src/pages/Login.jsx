@@ -28,9 +28,9 @@ const Login = ( {toggleModal, setUser}) => {
 
   return <div className="loginDiv">
 
-    <div className="flex xdiv">
+    
       <img src={x} className='icon loginX' onClick={toggleModal}/>
-    </div>
+
 
     <div className='flex'>
     <h3 className='loginTitle'>Login</h3>
