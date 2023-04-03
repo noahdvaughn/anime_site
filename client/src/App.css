@@ -266,8 +266,27 @@ header{
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  /* align-content: flex-end; */
+  /* align-items: center; */
 }
-
+.userReview{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: #1e1e1e;
+  width: 40vw;
+}
+.userWatched{
+  display: flex;
+  background-color: #1e1e1e;
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+}
 
 
 

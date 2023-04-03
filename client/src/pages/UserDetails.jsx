@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import { useEffect, useState } from "react"
 import { GetSingleUser } from "../services/auth"
 import { GetAllByUserId } from "../services/review"
@@ -12,10 +12,19 @@ const UserDetails = ({ user, setUser  }) => {
   const [written, setWritten] = useState(false)
   const [writingRec, setWritingRec] = useState(false)
   const [editingUser, setEditingUser] = useState(false)
-  const [viewingWatched, setViewingWatched] = useState(false)
-  const [viewingRecs, setViewingRecs] = useState(true)
+  const [viewingWatched, setViewingWatched] = useState(true)
+  const [viewingRecs, setViewingRecs] = useState(false)
   const [viewingReviews, setViewingReviews] = useState(false)
-  
+  let averageScore = 0
+
+  if (userData){
+    userData.data.reviews.forEach((review)=>{
+      averageScore += review.rating
+    })
+    averageScore = (averageScore / userData.data.reviews.length)
+  }
+
+
   const toggleWritingRec = () => {
     setWritingRec(!writingRec)
   }
@@ -80,34 +89,41 @@ const UserDetails = ({ user, setUser  }) => {
       <div className="flex">
 
         {viewingWatched ? (
-           <div className="userColumn">
+           <div >
            <h1>watched</h1>
-           {userData.data.watched.length === 0 ? (<p>User has no watched</p>) : (<div>
+           {userData.data.watched.length === 0 ? (<p>User has no watched</p>) : (
+           <div className="userColumn"> 
              {userData.data.watched.map((watched)=>(
-               <div>
+               <Link to={`/details/${encodeURIComponent(watched.animeName)}/${watched.animeId}`} className="userWatched">
                  <img src={watched.animePic} className="userWatchedPic"/>
                  <p>{watched.animeName}</p>
-               </div>
+               </Link>
              ))}
            </div>)}
          </div>
  
         ) : (<></>)}
 
-       {viewingRecs ? (
+       {viewingReviews ? (
         <div>
-            {userData.data.reviews.length === 0 ? (<p>User has no watched</p>) : (<div>
+            {userData.data.reviews.length === 0 ? (<p>User has no reviews</p>) : (
+              <div>
+              <h3>Average Review Score: {averageScore}</h3>
              {userData.data.reviews.map((review)=>(
                <div>
+                <Link to={`/details/${encodeURIComponent(review.animeName)}/${review.animeId}`} className="userReview white">
                  <img src={review.animePic} className="userWatchedPic"/>
                  <p>{review.animeName}</p>
+                 <p>{review.rating}/10</p>
+                 <p>"{review.body}"</p>
+                </Link>
                </div>
              ))}
            </div>)}
         </div>
 
        ) : (<></>)}
-       {viewingReviews ? (
+       {viewingRecs ? (
         <div>
           <h1>recs</h1>
         </div>
