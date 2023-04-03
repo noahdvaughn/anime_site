@@ -61,7 +61,7 @@ const Recommendations = ({user, setUser}) => {
   console.log(recs)
 
   return <div className="recBody">
-    <h1>Top Recommendations</h1>
+    <h2 className="Roboto pinkUL">Recommendation Feed</h2>
     {recs ? (
       <div className="">
         {recs.data.map((rec)=>(
@@ -69,14 +69,14 @@ const Recommendations = ({user, setUser}) => {
 
             <div className="column">
               <div className="flex">
-            <img src={greenArrow} className={`recsArrow ${user && user.upvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
+            <img src={greenArrow} className={`recsArrow grow ${user && user.upvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
               userUpvote(rec.id, rec.upvotes)
             }}/>
               <p>{rec.upvotes}</p>
               </div>
 
             <div className="flex">
-            <img src={redArrow} className={`recsArrow ${user && user.downvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
+            <img src={redArrow} className={`recsArrow grow ${user && user.downvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
               userDownvote(rec.id, rec.downvotes)
             }}/>
             <p>{rec.downvotes}</p>
@@ -92,7 +92,7 @@ const Recommendations = ({user, setUser}) => {
             </Link>
 
             <div>
-              <p>If you like...</p>
+              <p className="italic">If you like...</p>
               <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`} className='white'>
               <img src={rec.animePic} className='recAnimePic'/>
               <p>{rec.animeName}</p>
@@ -100,10 +100,10 @@ const Recommendations = ({user, setUser}) => {
               </Link>
             </div>
 
-            <h3 className="recDetails">"{rec.body}"</h3>
+            <h3 className="recDetails Bangers">"{rec.body}"</h3>
 
             <div>
-              <p>You'll like</p>
+              <p className="italic">You'll like</p>
               <Link to={`/details/${encodeURIComponent(rec.recommendedName)}/${rec.recommendedId}`} className='white'>
               <img src={rec.recommendedPic} className='recAnimePic'/>
               <p>{rec.recommendedName}</p>

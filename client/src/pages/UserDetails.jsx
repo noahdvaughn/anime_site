@@ -4,6 +4,7 @@ import { GetSingleUser } from "../services/auth"
 import { GetAllByUserId } from "../services/review"
 import CreateRecommendation from "./CreateRecommendation"
 import { UpdateUser } from "../services/auth"
+import EditUser from "./EditUser"
 
 const UserDetails = ({ user, setUser  }) => {
   const [userDetails, setUserDetails] = useState(false)
@@ -12,7 +13,8 @@ const UserDetails = ({ user, setUser  }) => {
   const [written, setWritten] = useState(false)
   const [writingRec, setWritingRec] = useState(false)
   const [editingUser, setEditingUser] = useState(false)
-  const [viewingWatched, setViewingWatched] = useState(true)
+
+  const [viewingWatched, setViewingWatched] = useState(false)
   const [viewingRecs, setViewingRecs] = useState(false)
   const [viewingReviews, setViewingReviews] = useState(false)
   let averageScore = 0
@@ -30,6 +32,24 @@ const UserDetails = ({ user, setUser  }) => {
   }
   const toggleEditingUser = () => {
     setEditingUser(!editingUser)
+  }
+  const toggleAllOff = () => {
+    setViewingWatched(false)
+    setViewingReviews(false)
+    setViewingRecs(false)
+  }
+
+  const toggleViewingW = () => {
+    toggleAllOff()
+    setViewingWatched(!viewingWatched)
+  }
+  const toggleViewingRecos = () => {
+    toggleAllOff()
+    setViewingRecs(!viewingRecs)
+  }
+  const toggleViewingRevs = () => {
+    toggleAllOff()
+    setViewingReviews(!viewingReviews)
   }
 
 
@@ -56,13 +76,13 @@ const UserDetails = ({ user, setUser  }) => {
         <h3>{userDetails.data.bio}</h3>
         {userDetails &&  user && (user.id === userDetails.data.id) ? (
         <div className="column">
-          <button onClick={toggleEditingUser}>Edit Profile?</button>
-          <button onClick={toggleWritingRec}>Make Recommendation?</button>
+          <button onClick={toggleEditingUser} className="userButton">Edit Profile?</button>
+          <button onClick={toggleWritingRec} className="userButton">Make Recommendation?</button>
           </div>
           ) : (<div></div>) }
         </div>
 
-        <h1>{userDetails.data.username}</h1>
+        <h1 className="userName">{userDetails.data.username}</h1>
 
         <div className="userStats">
         <h3>{userData.data.reviews.length}</h3>
@@ -81,13 +101,15 @@ const UserDetails = ({ user, setUser  }) => {
         <h3>{(userDetails.data.friend_list.length / 3)}</h3>
         <h3>Following</h3>
         </div>
-
       </div>
-      <h1>watched, reviews, recs</h1>
 
+      <div className="userSelect">
+        <h2 onClick={toggleViewingW} className="userSelectW">Watched</h2>
+        <h2 onClick={toggleViewingRevs} className="userSelectRev">Reviews</h2>
+        <h2 onClick={toggleViewingRecos} className="userSelectRec">Recs</h2>
+      </div>
 
       <div className="flex">
-
         {viewingWatched ? (
            <div >
            <h1>watched</h1>
@@ -123,12 +145,32 @@ const UserDetails = ({ user, setUser  }) => {
         </div>
 
        ) : (<></>)}
+
        {viewingRecs ? (
         <div>
-          <h1>recs</h1>
-        </div>
+          {userData.data.reviews.length === 0 ? (<p>User has no recommendations</p>) : (
+            <div>
+          {userData.data.recs.map((rec)=>(
+               <div className="userRec">
 
+                <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`} className=" white centerColumn">
+                 <img src={rec.animePic} className="userWatchedPic"/>
+                 <p>{rec.animeName}</p>
+                 </Link>
+
+                 <p>"{rec.body}"</p>
+
+                <Link to={`/details/${encodeURIComponent(rec.recommendedName)}/${rec.recommendedId}`} className=" white centerColumn" >
+                 <img src={rec.recommendedPic} className="userWatchedPic"/>
+                 <p>{rec.recommendedName}</p>
+                 </Link>
+
+               </div>
+             ))}
+           </div>)}
+        </div>
        ) : (<></>)}
+       
         
         {writingRec ? (
           <div className="modal">
@@ -137,7 +179,13 @@ const UserDetails = ({ user, setUser  }) => {
             </div>
           </div>
         ) : (<div></div>)}
-        {editingUser ? (<div></div>) : (<div></div>)}
+        {editingUser ? (
+          <div className="modal">
+            <div className="overlay">
+            <EditUser userDetails={userDetails} toggleEditingUser={toggleEditingUser} setWritten={setWritten} written={written}/>
+            </div>
+            </div>
+            ) : (<div></div>)}
       </div>
       </div>
 

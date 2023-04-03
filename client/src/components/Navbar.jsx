@@ -12,10 +12,10 @@ const Navbar = ({user, handleLogOut}) => {
   return(
   <div>
   <header>
-    <div className='flex'>
+    <Link className='flex wh Roboto' to='/' >
     <img id='plug'src={plug}/>
-    <h1>SakugaConnector</h1>
-    </div>
+    <h1 className=''>SakugaConnector</h1>
+    </Link>
 
     <div className='headerSearch'>
       <input className='headerInput' onChange={handleChange} type="text" onKeyUp={(e)=>{

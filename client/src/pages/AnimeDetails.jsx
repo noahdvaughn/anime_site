@@ -62,11 +62,12 @@ const AnimeDetails = ({user,setUser}) => {
       <div className="animeDetailsTop">
         <img src={details.data.main_picture.large} className='detailsImage'/>
         <div className="detailsColumn">
-          <h1>{details.data.title}</h1>
-          <h2>{details.data.alternative_titles.ja}</h2>
+          <h1 className="pinkUL">{details.data.title}</h1>
+          <h2 >{details.data.alternative_titles.ja}</h2>
           <div>
+            <h3>Genres:</h3>
             {details.data.genres.map((genre)=>(
-              <p key={genre.name}>{genre.name}</p>
+              <p key={genre.name}>-{genre.name}</p>
             ))}
           </div>
           <div style={{display: 'flex'}}>
@@ -80,7 +81,7 @@ const AnimeDetails = ({user,setUser}) => {
         </div>
       </div>
       <>
-        <p>{details.data.synopsis}</p>
+        <p className="black">{details.data.synopsis}</p>
       </>
       </div>
     ) : 
@@ -91,7 +92,7 @@ const AnimeDetails = ({user,setUser}) => {
     {user ? (
       user && user.watched.includes(parseInt(animeId)) ? (
         <div className="flex">
-          <h3>Anime Seen!</h3>
+          <h3 className="green">Anime Seen!</h3>
           <button onClick={toggleModal}>Make A Review</button>
         </div>
       ) : (
@@ -100,7 +101,7 @@ const AnimeDetails = ({user,setUser}) => {
         </div>
       )
       
-    ): (<p>Log in to add to your watched list and make a review</p>)}
+    ): (<p className="flex italic">Log in to add to your watched list and make a review</p>)}
     {modal && (
     <div className="modal">
       <div className="overlay">
@@ -109,12 +110,12 @@ const AnimeDetails = ({user,setUser}) => {
     </div>
     )}
 
-    {data ? (<>
-        <h3>Reviews: </h3>
-          {data.data.reviews.length === 0 ? (<h3>None yet</h3>) : (<></>)}
-        <div>
+    {data ? (<div >
+        <h3 className="flex">Reviews: </h3>
+          {data.data.reviews.length === 0 ? (<h3 className="flex">None yet</h3>) : (<></>)}
+        <div className="flex">
           {data.data.reviews.map((review)=>(
-            <div className="review">
+            <div className="review black">
               <Link className="reviewLink" to={`/user/${review.userId}`}>
               <img src={review.userPic} className='reviewUser'/>
               <p className="reviewName">{review.userName}</p>
@@ -133,7 +134,7 @@ const AnimeDetails = ({user,setUser}) => {
             </div>
           ))}
         </div>
-    </>) : (
+    </div>) : (
       <div>
         <h1>Loading...</h1>
         </div>

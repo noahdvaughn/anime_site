@@ -25,11 +25,11 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
 
   return(
   <div className='Sidebar'>
-    <Link  className='sidebarLink' to='/'>
-    <img src={house} className='icon'/>
+    <Link  className='sidebarLink grow Roboto' to='/'>
+    <img src={house} className='icon '/>
     <p>Home</p>
     </Link>
-    <Link className='sidebarLink' to='/recommendations'>
+    <Link className='sidebarLink grow Roboto' to='/recommendations'>
     <img src={pencil} className='icon'/>
     <p>Recs</p>
     </Link>
@@ -38,11 +38,11 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
 
     {user ? (
       <>
-    <Link className='sidebarLink' to={`/user/${user.id}`}>
+    <Link className='sidebarLink grow Roboto' to={`/user/${user.id}`}>
     <img src={userPic} className='icon'/>
     <p>Profile</p>
     </Link>
-    <div onClick={handleLogOut} className='sidebarLink'>
+    <div onClick={handleLogOut} className='sidebarLink grow Roboto'>
     <img src={logout} className='icon'/>
     <p>Sign-Out</p>
     </div>
@@ -51,11 +51,11 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
       <>
     <div className='sidebarLink' onClick={toggleRegistering}>
     <img src={folder} className='icon'/>
-    <p>Register</p>
+    <p className='Roboto'>Register</p>
     </div>
     <div onClick={toggleModal} className='sidebarLink'>
     <img src={login} className='icon'/>
-    <p>Sign-In</p>
+    <p className='Roboto'>Sign-In</p>
     </div>
     {modal && (
     <div className="modal">

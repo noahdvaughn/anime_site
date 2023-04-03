@@ -1,4 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+.Bangers{
+  font-family: 'Bangers';
+  letter-spacing: 2px;
+}
+.Roboto{
+  font-family: 'Roboto';
+}
 body{
   background-color: #2d2d30;
   margin: 0;
@@ -9,8 +17,40 @@ body{
 .white{
   color: white;
 }
+.wh{
+  color: white;
+}
+.wh:hover{
+  color: white;
+}
 .white:hover{
   color: pink;
+}
+.green{
+  color: green;
+}
+.black{
+  background-color: #1e1e1e;
+}
+.pinkUL{
+  border-bottom: 2px solid pink;
+}
+.UL{
+  transition: all 0.3s;
+}
+.UL:hover{
+  transition: all 0.3s;
+  border-bottom: 2px solid pink;
+}
+.grow{
+transition: all 0.3s;
+}
+.grow:hover{
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+.italic{
+  font-style: italic;
 }
 .flex{
   display: flex;
@@ -21,14 +61,14 @@ body{
   display: flex;
   flex-direction: column;
 }
-#plug{
-  width: 50px;
-  margin: 0;
-  padding: 0;
-  background-color: pink;
-  border-radius: 90%;
-  height: 50px;
+.centerColumn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+
 header{
   display: flex;
   background-color: black;
@@ -43,7 +83,16 @@ header{
   position: fixed;
   justify-content: space-between;
   z-index: 1;
+  
+}
 
+#plug{
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  background-color: pink;
+  border-radius: 90%;
+  height: 50px;
 }
 .headerSearch{
   display: flex;
@@ -261,6 +310,8 @@ header{
 }
 .userWatchedPic{
   width: 50px;
+  height: 80px;
+  object-fit: cover;
 }
 .userColumn{
   display: flex;
@@ -276,6 +327,7 @@ header{
   margin: 10px;
   background-color: #1e1e1e;
   width: 40vw;
+  justify-content: space-between;
 }
 .userWatched{
   display: flex;
@@ -286,6 +338,44 @@ header{
   justify-content: space-between;
   padding: 10px;
   margin: 10px;
+}
+.userRec{
+  display: flex;
+  background-color: #1e1e1e;
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  /* align-content: center ; */
+}
+.userSelect{
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+}
+.userSelectW{
+  border-right: 3px solid white;
+  width: 30vw;
+  text-align: center;
+
+}
+.userSelectRev{
+  width: 30vw;
+  text-align: center;
+}
+.userSelectRec{
+  width: 30vw;
+  text-align: center;
+
+  border-left: 3px solid white;
+}
+.userName{
+  border-bottom: 2px solid pink;
+}
+.userButton{
+  margin-bottom: 5px;
 }
 
 

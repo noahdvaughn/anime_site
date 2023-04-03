@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SignInUser } from '../services/Auth'
+import { SignInUser } from '../services/auth'
 import { useNavigate, Link } from 'react-router-dom'
 
 import x from '../assets/x.png'
