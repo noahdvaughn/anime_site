@@ -95,6 +95,9 @@ header{
 .overlay {
   background: rgba(49,49,49,0.5);
 }
+
+
+
 .animeDetailsBody{
   display: flex;
   flex-direction: column;
@@ -112,8 +115,10 @@ header{
 .detailsImage{
   object-fit: contain;
   width: 40vw;
-  
 }
+
+
+
 .reviewDiv{
   display: flex;
   flex-direction: column;
@@ -159,6 +164,10 @@ header{
 .loginForm{
   width: 200px;
 }
+
+
+
+
 .homeImage{
   height: 300px;
   width: 800px;
@@ -227,10 +236,28 @@ header{
   transform: scale(1.1);
   transition: all 0.3s;
   color: white;
-
 } 
+
+
 .userPagePic{
   max-width: 25vw;
+}
+.userStack{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userStats{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 5px;
+  justify-content: flex-end;
+}
+.userTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -265,5 +292,5 @@ header{
   width: 15vw;
 }
 .votedOn{
-  filter: drop-shadow(0px 0px 2px black) grayscale(20%); 
+  filter: drop-shadow(0px 0px 3px white) grayscale(10%); 
 }

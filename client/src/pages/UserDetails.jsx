@@ -11,9 +11,13 @@ const UserDetails = ({ user, setUser  }) => {
   const [userData, setUserData] = useState(false)
   const [written, setWritten] = useState(false)
   const [writingRec, setWritingRec] = useState(false)
+  const [editingUser, setEditingUser] = useState(false)
   
   const toggleWritingRec = () => {
     setWritingRec(!writingRec)
+  }
+  const toggleEditingUser = () => {
+    setEditingUser(!editingUser)
   }
 
 
@@ -34,42 +38,61 @@ const UserDetails = ({ user, setUser  }) => {
     {userData && userDetails  ? (
       <div>
 
-      <div className="flex">
-        <div>
+      <div className="userTop">
+        <div className="userStack">
         <img src={userDetails.data.profile_pic} className='userPagePic'/>
         <h3>{userDetails.data.bio}</h3>
-        {userDetails &&  user && (user.id === userDetails.data.id) ? (<button>Edit Profile?</button>) : (<div></div>) }
+        {userDetails &&  user && (user.id === userDetails.data.id) ? (
+        <div className="column">
+          <button onClick={toggleEditingUser}>Edit Profile?</button>
+          <button onClick={toggleWritingRec}>Make Recommendation?</button>
+          </div>
+          ) : (<div></div>) }
         </div>
+
         <h1>{userDetails.data.username}</h1>
 
-        <div>
+        <div className="userStats">
         <h3>{userData.data.reviews.length}</h3>
         <h3>Reviews</h3>
         </div>
-        <div>
+
+        <div className="userStats">
         <h3>{userData.data.watched.length}</h3>
-        <h3>Animes watched</h3>
+        <h3>Watched</h3>
         </div>
-        <div>
+        <div className="userStats">
         <h3>{userData.data.recs.length}</h3>
-        <h3>Recommendations Made</h3>
+        <h3>Recs</h3>
         </div>
-        <div>
+        <div className="userStats">
         <h3>{(userDetails.data.friend_list.length / 3)}</h3>
-        <h3>Friends</h3>
+        <h3>Following</h3>
         </div>
 
       </div>
-      <div>
-        {userDetails &&  user &&(user.id === userDetails.data.id) ? (<button onClick={toggleWritingRec}>Make Recommendation?</button>) : (<div></div>) }
+      <div className="flex">
+        <div>
+          <h1>friends</h1>
+        </div>
+        <div>
+          <h1>watched</h1>
+        </div>
+        <div>
+          <h1>recs</h1>
+        </div>
+        <div>
+          <h1>Reviews</h1>
+        </div>
+        
         {writingRec ? (
           <div className="modal">
             <div className="overlay">
             <CreateRecommendation user={user} watched={userData.data.watched} toggleWritingRec={toggleWritingRec} setWritten={setWritten} written={written}/>
-
             </div>
           </div>
         ) : (<div></div>)}
+        {editingUser ? (<div></div>) : (<div></div>)}
       </div>
       </div>
 
