@@ -14,7 +14,7 @@ const UserDetails = ({ user, setUser  }) => {
   const [writingRec, setWritingRec] = useState(false)
   const [editingUser, setEditingUser] = useState(false)
 
-  const [viewingWatched, setViewingWatched] = useState(false)
+  const [viewingWatched, setViewingWatched] = useState(true)
   const [viewingRecs, setViewingRecs] = useState(false)
   const [viewingReviews, setViewingReviews] = useState(false)
   let averageScore = 0
@@ -61,9 +61,6 @@ const UserDetails = ({ user, setUser  }) => {
     }
     grabUserDetails(id)
   },[written])
-  // console.log(userDetails)
-  console.log(userData)
-  // console.log(userData.data.recs.length)
 
 
   return <div>
@@ -112,13 +109,13 @@ const UserDetails = ({ user, setUser  }) => {
       <div className="flex">
         {viewingWatched ? (
            <div >
-           <h1>watched</h1>
+           <h2 className="Roboto pinkUL">Anime watched</h2>
            {userData.data.watched.length === 0 ? (<p>User has no watched</p>) : (
            <div className="userColumn"> 
              {userData.data.watched.map((watched)=>(
-               <Link to={`/details/${encodeURIComponent(watched.animeName)}/${watched.animeId}`} className="userWatched">
+               <Link to={`/details/${encodeURIComponent(watched.animeName)}/${watched.animeId}`} className="userWatched white">
                  <img src={watched.animePic} className="userWatchedPic"/>
-                 <p>{watched.animeName}</p>
+                 <h2 className="Roboto ">{watched.animeName}</h2>
                </Link>
              ))}
            </div>)}
@@ -130,6 +127,7 @@ const UserDetails = ({ user, setUser  }) => {
         <div>
             {userData.data.reviews.length === 0 ? (<p>User has no reviews</p>) : (
               <div>
+                <h2 className="Roboto pinkUL">{userDetails.data.username}'s Reviews</h2>
               <h3>Average Review Score: {averageScore}</h3>
              {userData.data.reviews.map((review)=>(
                <div>
@@ -137,7 +135,7 @@ const UserDetails = ({ user, setUser  }) => {
                  <img src={review.animePic} className="userWatchedPic"/>
                  <p>{review.animeName}</p>
                  <p>{review.rating}/10</p>
-                 <p>"{review.body}"</p>
+                 <p className="userReviewBody">"{review.body}"</p>
                 </Link>
                </div>
              ))}
@@ -150,15 +148,18 @@ const UserDetails = ({ user, setUser  }) => {
         <div>
           {userData.data.reviews.length === 0 ? (<p>User has no recommendations</p>) : (
             <div>
+                <h2 className="Roboto pinkUL">{userDetails.data.username}'s Recs</h2>
+
           {userData.data.recs.map((rec)=>(
                <div className="userRec">
+                
 
                 <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`} className=" white centerColumn">
                  <img src={rec.animePic} className="userWatchedPic"/>
                  <p>{rec.animeName}</p>
                  </Link>
 
-                 <p>"{rec.body}"</p>
+                 <h2 className="Bangers userRecBody">"{rec.body}"</h2>
 
                 <Link to={`/details/${encodeURIComponent(rec.recommendedName)}/${rec.recommendedId}`} className=" white centerColumn" >
                  <img src={rec.recommendedPic} className="userWatchedPic"/>

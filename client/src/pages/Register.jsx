@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { RegisterUser } from '../services/Auth'
+import { RegisterUser } from '../services/auth'
 import x from '../assets/x.png'
 
 

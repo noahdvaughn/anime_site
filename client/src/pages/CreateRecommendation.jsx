@@ -48,8 +48,8 @@ const CreateRecommendation = ({watched, user, toggleWritingRec, setWritten, writ
   }
 
 
-  return <div className="reviewDiv">
-  <img src={x} className='icon' onClick={toggleWritingRec}/>
+  return <div className="loginDiv">
+  <img src={x} className='icon loginX' onClick={toggleWritingRec}/>
   <h1>Create Recommendation</h1>
 
   <form className="reviewForm" onSubmit={handleSubmit}>
@@ -91,7 +91,7 @@ const CreateRecommendation = ({watched, user, toggleWritingRec, setWritten, writ
         onChange={handleChange}
         value={formState.body}
       />
-      {referenceIds.anime1Ref === referenceIds.anime2Ref ? (<p>Recommended anime must be different from original anime</p>) : (<button type="submit">Submit Review</button>)}
+      {referenceIds.anime1Ref === referenceIds.anime2Ref ? (<p className='flex'>Recommended anime must be different from original anime</p>) : (<button type="submit">Submit Review</button>)}
       
     </form>
 </div>

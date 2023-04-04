@@ -62,7 +62,7 @@ const AnimeDetails = ({user,setUser}) => {
       <div className="animeDetailsTop">
         <img src={details.data.main_picture.large} className='detailsImage'/>
         <div className="detailsColumn">
-          <h1 className="pinkUL">{details.data.title}</h1>
+          <h1 className="pinkUL flex">{details.data.title}</h1>
           <h2 >{details.data.alternative_titles.ja}</h2>
           <div>
             <h3>Genres:</h3>
@@ -70,14 +70,14 @@ const AnimeDetails = ({user,setUser}) => {
               <p key={genre.name}>-{genre.name}</p>
             ))}
           </div>
-          <div style={{display: 'flex'}}>
-            <p>Studios: </p>
+          <div className="column">
+            <h3>Studios: </h3>
             {details.data.studios.map((studio)=>(
-              <p key={studio.name}>{studio.name}</p>
+              <p key={studio.name}>-{studio.name}</p>
             ))}
           </div>
           <h3>{details.data.num_episodes} Episodes, {details.data.status.replaceAll('_', ' ')}</h3>
-          <h3>{details.data.start_date}</h3>
+          <h3>Start Date: {details.data.start_date.replaceAll('-', '/')}</h3>
         </div>
       </div>
       <>
@@ -91,7 +91,7 @@ const AnimeDetails = ({user,setUser}) => {
 
     {user ? (
       user && user.watched.includes(parseInt(animeId)) ? (
-        <div className="flex">
+        <div className="flex column">
           <h3 className="green">Anime Seen!</h3>
           <button onClick={toggleModal}>Make A Review</button>
         </div>
@@ -113,14 +113,14 @@ const AnimeDetails = ({user,setUser}) => {
     {data ? (<div >
         <h3 className="flex">Reviews: </h3>
           {data.data.reviews.length === 0 ? (<h3 className="flex">None yet</h3>) : (<></>)}
-        <div className="flex">
+        <div className="flex column">
           {data.data.reviews.map((review)=>(
             <div className="review black">
               <Link className="reviewLink" to={`/user/${review.userId}`}>
               <img src={review.userPic} className='reviewUser'/>
               <p className="reviewName">{review.userName}</p>
               </Link>
-              <p className="reviewComment">{review.body}</p>
+              <p className="reviewComment detailsRecBody">{review.body}</p>
               <p className="reviewRating">{review.rating}/10</p>
 
 

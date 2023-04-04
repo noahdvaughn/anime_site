@@ -28,12 +28,11 @@ console.log(seasonalAnime)
 
       <div className="homeCenterAnime">
         <div className='homeCenterAnimeText'> 
-          <h2>{seasonalAnime.data[randNum].node.title}</h2> 
-          <p className='homeCenterBody'>{seasonalAnime.data[randNum].node.synopsis}</p>
+          <h1 className='Roboto pinkUL'>{seasonalAnime.data[randNum].node.title}</h1> 
+          <p className='homeCenterBody black'>{seasonalAnime.data[randNum].node.synopsis}</p>
         </div>
         <Link to={`/details/${encodeURIComponent(seasonalAnime.data[randNum].node.title)}/${seasonalAnime.data[randNum].node.id}`}>
-
-      <img className='homeImage' src={seasonalAnime.data[randNum].node.main_picture.large}/>
+        <img className='homeImage' src={seasonalAnime.data[randNum].node.main_picture.large}/>
         </Link>
       </div>
 

@@ -165,6 +165,11 @@ header{
   object-fit: contain;
   width: 40vw;
 }
+.detailsRecBody{
+  overflow-wrap: break-word;
+  overflow-y: auto;
+
+}
 
 
 
@@ -180,6 +185,8 @@ header{
   height: 50px;
   align-items: center;
   padding: 10px;
+  width: 40vw;
+  margin-bottom: 10px;
 }
 .reviewName{
   margin-right:10px;
@@ -189,6 +196,8 @@ header{
 }
 .reviewUser{
   max-width: 50px;
+  object-fit: cover;
+  margin-right: 5px;
 }
 .reviewLink{
   display: flex;
@@ -217,11 +226,7 @@ header{
 
 
 
-.homeImage{
-  height: 300px;
-  width: 800px;
-  object-fit: cover;
-}
+
 @keyframes slide {
   0% {
     margin-left: 0px;
@@ -249,20 +254,27 @@ header{
 }
 .homeCenterAnime{
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  height: 40vh ;
+  margin-bottom: 10px;
 }
 .homeCenterAnimeText{
   display: flex;
   flex-direction: column;
-  width: 300px;
-  align-items: center;
-  height: 300px;
+  width: 40vw;
 }
 .homeCenterBody{
-  overflow-y: auto;
+  overflow-y: scroll;
+  height: 20vh;
+
+  /* height: auto */
 }
 .homeImage{
   margin-bottom: 10px;
+  width: 50vw;
+  height: 40vh;
+  object-fit: cover;
+
 }
 .animeCardPic{
   width: 300px;
@@ -328,6 +340,16 @@ header{
   background-color: #1e1e1e;
   width: 40vw;
   justify-content: space-between;
+  align-items: center;
+}
+.userReviewBody{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  height: 50px;
+  justify-content: center;
 }
 .userWatched{
   display: flex;
@@ -342,13 +364,12 @@ header{
 .userRec{
   display: flex;
   background-color: #1e1e1e;
-  width: 80vw;
+  width: 40vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   margin: 10px;
-  /* align-content: center ; */
 }
 .userSelect{
   display: flex;
@@ -376,6 +397,10 @@ header{
 }
 .userButton{
   margin-bottom: 5px;
+}
+.userRecBody{
+  overflow-wrap: break-word;
+  overflow-x: auto;
 }
 
 

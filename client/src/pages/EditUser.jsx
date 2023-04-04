@@ -29,8 +29,8 @@ const EditUser = ({userDetails, toggleEditingUser, setWritten, written}) => {
 
 
   return (
-    <div className="reviewDiv">
-    <img src={x} className='icon' onClick={toggleEditingUser}/>
+    <div className="loginDiv">
+    <img src={x} className='icon loginX' onClick={toggleEditingUser}/>
     <h1>Update User</h1>
   
     

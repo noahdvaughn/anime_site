@@ -31,12 +31,9 @@ const EditRecommendation = ({rec, toggleEditingRec, setWritten, written}) => {
     toggleEditingRec()
   }
 
-  return <div className="reviewDiv">
-  <img src={x} className='icon' onClick={toggleEditingRec}/>
-  <h1>Update recommendation</h1>
-
-  
-
+  return <div className="loginDiv">
+  <img src={x} className='icon loginX' onClick={toggleEditingRec}/>
+  <h3>Update recommendation</h3>
   <form className="reviewForm" onSubmit={handleSubmit}>
       <label htmlFor="comment">
         Body
