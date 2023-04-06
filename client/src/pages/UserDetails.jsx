@@ -128,7 +128,7 @@ const UserDetails = ({ user, setUser  }) => {
             {userData.data.reviews.length === 0 ? (<p>User has no reviews</p>) : (
               <div>
                 <h2 className="Roboto pinkUL">{userDetails.data.username}'s Reviews</h2>
-              <h3>Average Review Score: {averageScore}</h3>
+              <h3>Average Review Score: {averageScore.toFixed(2)}</h3>
              {userData.data.reviews.map((review)=>(
                <div>
                 <Link to={`/details/${encodeURIComponent(review.animeName)}/${review.animeId}`} className="userReview white">

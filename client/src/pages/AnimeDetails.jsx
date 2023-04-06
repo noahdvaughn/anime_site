@@ -56,7 +56,7 @@ const AnimeDetails = ({user,setUser}) => {
   
 
 
-  return <div >
+  return <div className="noTop">
     {details ? (
       <div className="animeDetailsBody">
       <div className="animeDetailsTop">
@@ -81,7 +81,7 @@ const AnimeDetails = ({user,setUser}) => {
         </div>
       </div>
       <>
-        <p className="black">{details.data.synopsis}</p>
+        <p className="black Roboto">{details.data.synopsis}</p>
       </>
       </div>
     ) : 

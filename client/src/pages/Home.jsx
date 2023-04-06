@@ -20,7 +20,6 @@ console.log(seasonalAnime)
 
   return <div className='homeDiv'>
     <h2 className='Roboto'>
-      Top Spring Airing Anime
     </h2>
 
     {seasonalAnime.length === 0 ? (<>Loading...</>) : 
@@ -29,7 +28,7 @@ console.log(seasonalAnime)
       <div className="homeCenterAnime">
         <div className='homeCenterAnimeText'> 
           <h1 className='Roboto pinkUL'>{seasonalAnime.data[randNum].node.title}</h1> 
-          <p className='homeCenterBody black'>{seasonalAnime.data[randNum].node.synopsis}</p>
+          <p className='homeCenterBody black Roboto'>{seasonalAnime.data[randNum].node.synopsis}</p>
         </div>
         <Link to={`/details/${encodeURIComponent(seasonalAnime.data[randNum].node.title)}/${seasonalAnime.data[randNum].node.id}`}>
         <img className='homeImage' src={seasonalAnime.data[randNum].node.main_picture.large}/>
