@@ -27,5 +27,8 @@
     "nodemon": "^2.0.22",
     "pg": "^8.10.0",
     "sequelize": "^6.30.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
