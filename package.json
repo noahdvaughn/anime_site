@@ -9,8 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js",
-    "build": "cd client && rm -rf dist && npm install && npm run build"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
