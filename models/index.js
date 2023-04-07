@@ -16,7 +16,7 @@ const db = {}
 //   sequelize = new Sequelize(config.database, config.username, config.password, config);
 // }
 const Sequelize = require('sequelize')
-sequelize = new Sequelize(process.env.DATABASE_URL, {
+let sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialectOptions: {
     ssl: {
       require: true,
