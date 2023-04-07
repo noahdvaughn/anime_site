@@ -17,8 +17,12 @@ app.get('/', (req, res) => {
   res.send('This is the base path!')
 })
 
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.join(`${__dirname}/client/dist/index.html`))
-// })
+app.options('/url...', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'POST')
+  res.header('Access-Control-Allow-Headers', 'accept, content-type')
+  res.header('Access-Control-Max-Age', '1728000')
+  return res.sendStatus(200)
+})
 
 app.listen(PORT, () => console.log(`Server Running On Port ${PORT} . . . `))
