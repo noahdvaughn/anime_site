@@ -2,11 +2,16 @@ const express = require('express')
 const cors = require('cors')
 const logger = require('morgan')
 const AppRouter = require('./routes/AppRouter')
+const corsOptions = {
+  origin: '*',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200
+}
 
 const app = express()
 const PORT = process.env.PORT || 3001
 
-app.use(cors())
+app.use(cors(corsOptions))
 // app.use(express.static(path.join(`${__dirname}/client/dist`)))
 app.use(logger('dev'))
 app.use(express.json())
