@@ -25,7 +25,7 @@
 
 - Postgres
 - Express
-- React
+- React, Vite
 - Node
 
 ## **Credits**
