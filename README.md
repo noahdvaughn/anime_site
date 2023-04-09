@@ -12,6 +12,7 @@
 |
 [Github](https://github.com/noahdvaughn)
 |
+[Deployed Link](https://sakugaconnector.surge.sh/)
 
 ### **_Description_**
 
@@ -23,11 +24,18 @@
 
 ### **_*Technologies Used*_**
 
-- Postgres
+- React
+  - Vite
+- SQL
+  - PostgreSQL
+- Sequelize
 - Express
-- React, Vite
 - Node
 
 ## **Credits**
 
-#### MyAnimeList Public API
+### Frontend deployed on Surge
+
+### Backend deployed on Heroku
+
+### MyAnimeList Public API
