@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import plug from '../assets/plug-solid.svg'
-const Navbar = ({user, handleLogOut}) => {
+const Navbar = () => {
   let navigate = useNavigate()
   const [searchValue, setSearchValue] = useState('')
   const handleChange = (event) => {
