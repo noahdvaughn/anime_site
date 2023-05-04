@@ -4,7 +4,7 @@ const logger = require('morgan')
 const AppRouter = require('./routes/AppRouter')
 const corsOptions = {
   origin: '*',
-  credentials: true, //access-control-allow-credentials:true
+  credentials: true,
   optionSuccessStatus: 200
 }
 
@@ -12,7 +12,7 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 app.use(cors(corsOptions))
-// app.use(express.static(path.join(`${__dirname}/client/dist`)))
+
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -21,6 +21,8 @@ app.use('/api', AppRouter)
 app.get('/', (req, res) => {
   res.send('This is the base path!')
 })
+
+// UNCOMMENT OUT FOR DEVELOPMENT
 
 app.options('/url...', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
