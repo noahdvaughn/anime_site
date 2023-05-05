@@ -4,7 +4,7 @@ import login from '../assets/loginicon.png'
 import logout from '../assets/logouticon.png'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
-import { useEffect, useState } from "react"
+import {  useState } from "react"
 import userPic from '../assets/user.png'
 import pencil from '../assets/pencil.png'
 import folder from '../assets/folder.png'
