@@ -15,14 +15,12 @@ const Home = ({user}) => {
     }
     grabSeasonal()
   }, [])
-console.log(seasonalAnime)
 
 
   return <div className='homeDiv'>
-    <h2 className='Roboto'>
-    </h2>
+    
 
-    {seasonalAnime.length === 0 ? (<>Loading...</>) : 
+    {seasonalAnime.length === 0 ? (<h1>Loading...</h1>) : 
     (<div>
 
       <div className="homeCenterAnime">

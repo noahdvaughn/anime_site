@@ -25,11 +25,13 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
 
   return(
   <div className='Sidebar'>
-    <Link  className='sidebarLink grow Roboto' to='/'>
-    <img src={house} className='icon '/>
+
+    <Link  className='sidebarLink Roboto' to='/'>
+    <img src={house} className='icon'/>
     <p>Home</p>
     </Link>
-    <Link className='sidebarLink grow Roboto' to='/recommendations'>
+    
+    <Link className='sidebarLink Roboto' to='/recommendations'>
     <img src={pencil} className='icon'/>
     <p>Recs</p>
     </Link>

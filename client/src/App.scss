@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import './assets/colors.scss';
 .Bangers{
   font-family: 'Bangers';
   letter-spacing: 2px;
@@ -10,7 +11,6 @@
 .noTop{
   margin-top: 0;
   padding-top: 0;
-
 }
 body{
   background-color: #2d2d30;
@@ -74,6 +74,30 @@ transition: all 0.3s;
 }
 
 
+.animeCardPic{
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+.animeCardTitle{
+  /* width: 20vw; */
+  height: 10vh;
+}
+.animeCardDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  transition: all 0.3s;
+  color: white;
+}
+.animeCardDiv:hover{
+  transform: scale(1.1);
+  transition: all 0.3s;
+  color: white;
+} 
+
+
 header{
   display: flex;
   background-color: black;
@@ -107,32 +131,14 @@ header{
 .headerInput{
   width: 30vw;
 }
-.Sidebar{
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: 90vh;
-  width: 8vw;
-  position:fixed;
-  left: 0;
-  z-index: 1;
 
-  
-}
-.sidebarLink{
-  color: white;
-}
-.sidebarLink:hover{
-  color: pink;
-}
 
 .icon{
   max-width: 50px;
   margin-bottom: -20px;
   padding: 0;
 }
+
 .overlay, .modal{
   left: 8vw;
   right: 0;
@@ -155,7 +161,6 @@ header{
 .animeDetailsBody{
   display: flex;
   flex-direction: column;
-  
 }
 .animeDetailsTop{
   display: flex;
@@ -283,28 +288,57 @@ header{
   object-fit: cover;
 
 }
-.animeCardPic{
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
+.recsArrow{
+  width: 25px;
+  filter: grayscale(50%);
 }
-.animeCardTitle{
-  /* width: 20vw; */
-  height: 10vh;
+.recAnimePic{
+  max-width: 150px;
 }
-.animeCardDiv{
+.recBody{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+.rec{
+  background-color: #1e1e1e;
+  margin-bottom: 20px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.recDetails{
+  /* overflow-x: scroll; */
+  overflow-wrap:break-word;
+  overflow-y: auto;
+  width: 15vw;
+}
+
+.Sidebar{
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 20px;
-  transition: all 0.3s;
-  color: white;
+  justify-content: space-around;
+  height: 90vh;
+  width: 8vw;
+  position:fixed;
+  left: 0;
+  z-index: 1;
+
+  
 }
-.animeCardDiv:hover{
-  transform: scale(1.1);
-  transition: all 0.3s;
+.sidebarLink{
   color: white;
-} 
+  width: 100%;
+  text-align: center;
+}
+.sidebarLink:hover{
+  background-color: grey;
+}
 
 
 .userPagePic{
@@ -410,36 +444,6 @@ header{
   overflow-x: auto;
 }
 
-
-
-.recsArrow{
-  width: 25px;
-  filter: grayscale(50%);
-}
-.recAnimePic{
-  max-width: 150px;
-}
-.recBody{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-}
-.rec{
-  background-color: #1e1e1e;
-  margin-bottom: 20px;
-  width: 50vw;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 20px;
-}
-.recDetails{
-  /* overflow-x: scroll; */
-  overflow-wrap:break-word;
-  overflow-y: auto;
-  width: 15vw;
-}
 .votedOn{
   filter: drop-shadow(0px 0px 3px white) grayscale(10%); 
 }
