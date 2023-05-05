@@ -12,8 +12,11 @@
   margin-top: 0;
   padding-top: 0;
 }
+.flavor{
+  color: $flavor;
+}
 body{
-  background-color: #2d2d30;
+  background-color: $body;
   margin: 0;
   padding: 0;
   padding-left: 8vw;
@@ -115,14 +118,7 @@ header{
   
 }
 
-#plug{
-  width: 50px;
-  margin: 0;
-  padding: 0;
-  background-color: pink;
-  border-radius: 90%;
-  height: 50px;
-}
+
 .headerSearch{
   display: flex;
   justify-content: center;
@@ -286,7 +282,14 @@ header{
   width: 50vw;
   height: 40vh;
   object-fit: cover;
-
+}
+.plug{
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  background-color: $flavor;
+  border-radius: 90%;
+  height: 50px;
 }
 .recsArrow{
   width: 25px;

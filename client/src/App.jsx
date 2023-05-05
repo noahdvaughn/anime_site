@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router'
 import { useState, useEffect, useRef, createContext, useContext } from 'react'
 import { CheckSession } from './services/auth'
-import './App.css'
+import './App.scss'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Home from './pages/Home'

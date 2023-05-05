@@ -13,8 +13,8 @@ const Navbar = () => {
   <div>
   <header>
     <Link className='flex wh Roboto' to='/' >
-    <img id='plug'src={plug}/>
-    <h1 className=''>SakugaConnector</h1>
+    <img className='plug'src={plug}/>
+    <h1 className='flavor'>SakugaConnector</h1>
     </Link>
 
     <div className='headerSearch'>
