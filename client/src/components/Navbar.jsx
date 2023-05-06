@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import plug from '../assets/plug-solid.svg'
+import {AiOutlineSearch} from 'react-icons/Ai'
 const Navbar = () => {
   let navigate = useNavigate()
   const [searchValue, setSearchValue] = useState('')
@@ -22,6 +23,7 @@ const Navbar = () => {
     if (e.keyCode === 13 && searchValue.length >= 3){
       navigate(`/search/${searchValue}`)
     }}}/> 
+    <AiOutlineSearch />
     </div>
   </header>
   </div>)

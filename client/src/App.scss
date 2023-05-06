@@ -130,10 +130,11 @@ header{
 
 
 .icon{
-  max-width: 50px;
   margin-bottom: -20px;
+  font-size: 3rem;
   padding: 0;
 }
+
 
 .overlay, .modal{
   left: 8vw;
@@ -337,10 +338,15 @@ header{
 .sidebarLink{
   color: white;
   width: 100%;
-  text-align: center;
-}
-.sidebarLink:hover{
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  height: 22.5vh;
+  &:hover{
+  background-color: $flavor;
+  color: #111;
+  }
 }
 
 

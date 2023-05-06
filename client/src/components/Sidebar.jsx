@@ -9,6 +9,8 @@ import userPic from '../assets/user.png'
 import pencil from '../assets/pencil.png'
 import folder from '../assets/folder.png'
 
+import {BsHouseDoorFill, BsPencilFill, BsFillFolderFill, BsFillArrowRightSquareFill,BsFillArrowLeftSquareFill } from 'react-icons/Bs'
+
 
 const Sidebar = ({setUser, user, handleLogOut}) => {
   const [modal, setModal] = useState(false)
@@ -27,12 +29,12 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
   <div className='Sidebar'>
 
     <Link  className='sidebarLink Roboto' to='/'>
-    <img src={house} className='icon'/>
+    <BsHouseDoorFill className='icon'/>
     <p>Home</p>
     </Link>
-    
+
     <Link className='sidebarLink Roboto' to='/recommendations'>
-    <img src={pencil} className='icon'/>
+    <BsPencilFill className='icon'/>
     <p>Recs</p>
     </Link>
 
@@ -45,18 +47,18 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
     <p>Profile</p>
     </Link>
     <div onClick={handleLogOut} className='sidebarLink grow Roboto'>
-    <img src={logout} className='icon'/>
+    <BsFillArrowLeftSquareFill className='icon'/>
     <p>Sign-Out</p>
     </div>
       </>
     ) : (
       <>
     <div className='sidebarLink' onClick={toggleRegistering}>
-    <img src={folder} className='icon'/>
+    <BsFillFolderFill className='icon'/>
     <p className='Roboto'>Register</p>
     </div>
     <div onClick={toggleModal} className='sidebarLink'>
-    <img src={login} className='icon'/>
+    <BsFillArrowRightSquareFill className='icon'/>
     <p className='Roboto'>Sign-In</p>
     </div>
     {modal && (
