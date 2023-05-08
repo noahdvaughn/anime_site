@@ -27,11 +27,12 @@ const Navbar = () => {
     </div>
     
     <div className='flex'>
-      <Link to ='/'>
-    <AiFillGithub className='headerSocials'/>
-
+      <Link to ='https://github.com/noahdvaughn/sakuga_connector'>
+        <AiFillGithub className='headerSocials'/>
       </Link>
-    <AiFillLinkedin className='headerSocials'/>
+      <Link to='https://www.linkedin.com/in/noahvaughn/'>
+        <AiFillLinkedin className='headerSocials'/>
+      </Link>
     </div>
   </header>
   </div>)

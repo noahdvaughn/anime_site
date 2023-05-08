@@ -85,7 +85,7 @@ const AnimeDetails = ({user,setUser}) => {
       </>
       </div>
     ) : 
-    (<></>)}
+    (<h1>Loading</h1>)}
 
 
 
@@ -135,9 +135,7 @@ const AnimeDetails = ({user,setUser}) => {
           ))}
         </div>
     </div>) : (
-      <div>
-        <h1>Loading...</h1>
-        </div>
+      <></>
       )}
     </div>
   
