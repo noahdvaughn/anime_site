@@ -16,7 +16,7 @@
   color: $flavor;
 }
 body{
-  background-color: $body;
+  background-color: $grey;
   margin: 0;
   padding: 0;
   padding-left: 8vw;
@@ -30,9 +30,6 @@ body{
 }
 .wh:hover{
   color: white;
-}
-.white:hover{
-  color: pink;
 }
 .green{
   color: green;
@@ -322,7 +319,8 @@ header{
 }
 
 .Sidebar{
-  background-color: black;
+  // background-color: $grey;
+  background-image: linear-gradient( black, $grey);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -345,7 +343,7 @@ header{
   height: 22.5vh;
   &:hover{
   background-color: $flavor;
-  color: #111;
+  color: black;
   }
 }
 
