@@ -3,6 +3,8 @@ import { SignInUser } from '../services/auth'
 import { useNavigate, Link } from 'react-router-dom'
 
 import x from '../assets/x.png'
+import { AiOutlineCloseCircle } from 'react-icons/Ai'
+
 
 
 
@@ -28,9 +30,7 @@ const Login = ( {toggleModal, setUser}) => {
 
   return <div className="loginDiv">
 
-    
-      <img src={x} className='icon loginX' onClick={toggleModal}/>
-
+    <AiOutlineCloseCircle onClick={toggleModal}/>
 
     <div className='flex'>
     <h3 className='loginTitle'>Login</h3>

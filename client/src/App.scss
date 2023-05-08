@@ -76,9 +76,7 @@ transition: all 0.3s;
 
 
 
-.glass{
-  font-size: 2rem;
-}
+
 
 
 
@@ -148,6 +146,10 @@ transition: all 0.3s;
   overflow-wrap: break-word;
   overflow-y: auto;
 
+}
+.glass{
+  font-size: 2rem;
+  cursor: pointer;
 }
 header{
   display: flex;

@@ -23,14 +23,17 @@ const Navbar = () => {
     if (e.keyCode === 13 && searchValue.length >= 3){
       navigate(`/search/${searchValue}`)
     }}}/> 
-    <AiOutlineSearch className='glass'/>
+    <AiOutlineSearch className='glass' onClick={()=>{
+      navigate(`/search/${searchValue}`)
+
+    }}/>
     </div>
     
     <div className='flex'>
-      <Link to ='https://github.com/noahdvaughn/sakuga_connector'>
+      <Link to ='https://github.com/noahdvaughn/sakuga_connector' target='_blank'>
         <AiFillGithub className='headerSocials'/>
       </Link>
-      <Link to='https://www.linkedin.com/in/noahvaughn/'>
+      <Link to='https://www.linkedin.com/in/noahvaughn/' target='_blank'>
         <AiFillLinkedin className='headerSocials'/>
       </Link>
     </div>

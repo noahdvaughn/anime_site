@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterUser } from '../services/auth'
-import x from '../assets/x.png'
+import { AiOutlineCloseCircle } from 'react-icons/Ai'
 
 
 const Register = ( {toggleRegistering}) => {
@@ -34,7 +34,7 @@ const Register = ( {toggleRegistering}) => {
   return<div className="loginDiv">
 
   <div className="flex xdiv">
-    <img src={x} className='icon loginX' onClick={toggleRegistering}/>
+    <AiOutlineCloseCircle onClick={toggleRegistering}/>
   </div>
 
   <div className='flex'>
