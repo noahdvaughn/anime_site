@@ -75,63 +75,12 @@ transition: all 0.3s;
 }
 
 
-.animeCardPic{
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
-}
-.animeCardTitle{
-  /* width: 20vw; */
-  height: 10vh;
-}
-.animeCardDiv{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 20px;
-  transition: all 0.3s;
-  color: white;
-}
-.animeCardDiv:hover{
-  transform: scale(1.1);
-  transition: all 0.3s;
-  color: white;
-} 
+
 .glass{
   font-size: 2rem;
 }
 
-header{
-  display: flex;
-  background-color: black;
-  align-content: center;
-  align-items: center;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  height: 10vh;
-  left: 0;
-  top: 0;
-  position: fixed;
-  justify-content: space-between;
-  z-index: 1;
-  overflow-x: hidden;
-  
-}
 
-
-.headerSearch{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60vw;
-}
-.headerInput{
-  width: 30vw;
-}
-.headerSocials{
-  font-size: 3rem;
-}
 
 
 
@@ -160,6 +109,21 @@ header{
 }
 
 
+.animeCardPic{
+
+}
+// .animeCardTitle{
+//   height: 10vh;
+//   margin-top: -100px;
+// }
+.animeCardDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  transition: all 0.3s;
+  height: 45vh;
+}
 
 .animeDetailsBody{
   display: flex;
@@ -184,6 +148,86 @@ header{
   overflow-wrap: break-word;
   overflow-y: auto;
 
+}
+header{
+  display: flex;
+  background-color: black;
+  align-content: center;
+  align-items: center;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  height: 10vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 1;
+
+  overflow-y: hidden;
+  
+}
+.headerSearch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+}
+.headerInput{
+  width: 30vw;
+}
+.headerSocials{
+  font-size: 3rem;
+  padding-right: 2rem;
+  color: white;
+}
+@keyframes slide {
+  0% {
+    margin-left: 0px;
+  }
+  50%{
+    margin-left: -3300px
+
+  }
+  100%{
+    margin-left: 0px;
+  }
+}
+.homeCenterAnime{
+  display: flex;
+  align-items: flex-end;
+  height: 45vh;
+}
+.homeRow{
+  display: flex;
+  overflow-x: hidden;
+  animation: slide infinite 120s linear;
+  overflow-y: hidden;
+  max-height: 45vh;
+}
+.homeDiv{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* align-items: center; */
+  overflow-y: hidden;
+}
+.homeCenterAnimeText{
+  display: flex;
+  flex-direction: column;
+  width: 42vw;
+}
+.homeImage{
+  margin-bottom: 10px;
+  width: 50vw;
+  height: 45vh;
+  object-fit: cover;
+  
+}
+.homeCenterBody{
+  overflow-y: scroll;
+  height: 20vh;
 }
 
 
@@ -242,54 +286,8 @@ header{
 
 
 
-@keyframes slide {
-  0% {
-    margin-left: 0px;
-  }
-  50%{
-    margin-left: -3300px
 
-  }
-  100%{
-    margin-left: 0px;
-  }
-}
-.homeRow{
-  display: flex;
-  overflow-x: hidden;
-  animation: slide infinite 120s linear;
-}
-.homeDiv{
-  width: 92vw;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  /* align-items: center; */
-}
-.homeCenterAnime{
-  display: flex;
-  align-items: flex-end;
-  height: 40vh ;
-  margin-bottom: 10px;
-}
-.homeCenterAnimeText{
-  display: flex;
-  flex-direction: column;
-  width: 40vw;
-}
-.homeCenterBody{
-  overflow-y: scroll;
-  height: 20vh;
 
-  /* height: auto */
-}
-.homeImage{
-  margin-bottom: 10px;
-  width: 50vw;
-  height: 40vh;
-  object-fit: cover;
-}
 .plug{
   width: 50px;
   margin: 0;

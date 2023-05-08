@@ -21,14 +21,16 @@ const Home = ({user}) => {
     
 
     {seasonalAnime.length === 0 ? (<h1>Loading...</h1>) : 
-    (<div>
+    (<>
 
       <div className="homeCenterAnime">
+
         <div className='homeCenterAnimeText'> 
           <h1 className='Roboto'>{seasonalAnime.data[randNum].node.title}</h1> 
           <p className='homeCenterBody black Roboto'>{seasonalAnime.data[randNum].node.synopsis}</p>
         </div>
-        <Link to={`/details/${encodeURIComponent(seasonalAnime.data[randNum].node.title)}/${seasonalAnime.data[randNum].node.id}`}>
+
+        <Link to={`/details/${encodeURIComponent(seasonalAnime.data[randNum].node.title)}/${seasonalAnime.data[randNum].node.id}`} >
         <img className='homeImage' src={seasonalAnime.data[randNum].node.main_picture.large}/>
         </Link>
       </div>
@@ -37,7 +39,7 @@ const Home = ({user}) => {
         {seasonalAnime.data.map((anime)=>(
             <AnimeCard anime={anime.node} key={anime.node.id}/>
           ))}</div>
-      </div> 
+      </> 
       )}
     </div>
   

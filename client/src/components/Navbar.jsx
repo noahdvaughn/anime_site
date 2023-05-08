@@ -26,8 +26,11 @@ const Navbar = () => {
     <AiOutlineSearch className='glass'/>
     </div>
     
-    <div>
+    <div className='flex'>
+      <Link to ='/'>
     <AiFillGithub className='headerSocials'/>
+
+      </Link>
     <AiFillLinkedin className='headerSocials'/>
     </div>
   </header>
