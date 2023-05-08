@@ -25,7 +25,7 @@ const Home = ({user}) => {
 
       <div className="homeCenterAnime">
         <div className='homeCenterAnimeText'> 
-          <h1 className='Roboto flavor'>{seasonalAnime.data[randNum].node.title}</h1> 
+          <h1 className='Roboto'>{seasonalAnime.data[randNum].node.title}</h1> 
           <p className='homeCenterBody black Roboto'>{seasonalAnime.data[randNum].node.synopsis}</p>
         </div>
         <Link to={`/details/${encodeURIComponent(seasonalAnime.data[randNum].node.title)}/${seasonalAnime.data[randNum].node.id}`}>

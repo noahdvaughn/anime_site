@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import plug from '../assets/plug-solid.svg'
-import {AiOutlineSearch} from 'react-icons/Ai'
+import {AiOutlineSearch, AiFillGithub, AiFillLinkedin} from 'react-icons/Ai'
 const Navbar = () => {
   let navigate = useNavigate()
   const [searchValue, setSearchValue] = useState('')
@@ -15,7 +15,7 @@ const Navbar = () => {
   <header>
     <Link className='flex wh Roboto' to='/' >
     <img className='plug'src={plug}/>
-    <h1 className='flavor'>SakugaConnector</h1>
+    <h1 >SakugaConnector</h1>
     </Link>
 
     <div className='headerSearch'>
@@ -23,7 +23,12 @@ const Navbar = () => {
     if (e.keyCode === 13 && searchValue.length >= 3){
       navigate(`/search/${searchValue}`)
     }}}/> 
-    <AiOutlineSearch />
+    <AiOutlineSearch className='glass'/>
+    </div>
+    
+    <div>
+    <AiFillGithub className='headerSocials'/>
+    <AiFillLinkedin className='headerSocials'/>
     </div>
   </header>
   </div>)

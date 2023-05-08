@@ -22,6 +22,7 @@ body{
   padding-left: 8vw;
   padding-top: 10vh;
 }
+
 .white{
   color: white;
 }
@@ -96,7 +97,9 @@ transition: all 0.3s;
   transition: all 0.3s;
   color: white;
 } 
-
+.glass{
+  font-size: 2rem;
+}
 
 header{
   display: flex;
@@ -112,6 +115,7 @@ header{
   position: fixed;
   justify-content: space-between;
   z-index: 1;
+  overflow-x: hidden;
   
 }
 
@@ -119,11 +123,16 @@ header{
 .headerSearch{
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 60vw;
 }
 .headerInput{
   width: 30vw;
 }
+.headerSocials{
+  font-size: 3rem;
+}
+
 
 
 .icon{
@@ -285,7 +294,7 @@ header{
   width: 50px;
   margin: 0;
   padding: 0;
-  background-color: $flavor;
+  background-color: white;
   border-radius: 90%;
   height: 50px;
 }
@@ -330,8 +339,6 @@ header{
   position:fixed;
   left: 0;
   z-index: 1;
-
-  
 }
 .sidebarLink{
   color: white;
@@ -341,9 +348,11 @@ header{
   justify-content:center;
   align-items: center;
   height: 22.5vh;
+  cursor: pointer;
+
   &:hover{
-  background-color: $flavor;
-  color: black;
+  background-color: $grey;
+  color: white;
   }
 }
 
