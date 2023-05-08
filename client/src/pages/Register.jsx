@@ -39,7 +39,7 @@ const Register = ( {toggleRegistering}) => {
   </div>
 
   <div className='flex'>
-    <form onSubmit={handleSubmit} className='loginForm'>
+    <form onSubmit={handleSubmit} className='registerForm'>
           <div>
             <input
               className="rounded-input"

@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { SignInUser } from '../services/auth'
 import { useNavigate, Link } from 'react-router-dom'
 
-import x from '../assets/x.png'
-import { AiOutlineCloseCircle } from 'react-icons/Ai'
+
+import { AiFillCloseSquare } from 'react-icons/Ai'
+
 
 
 
@@ -31,8 +32,8 @@ const Login = ( {toggleModal, setUser}) => {
   return <div className="loginDiv">
 
     <div className='flex xdiv'>
-    <h3 className='loginTitle'>Login</h3>
-    <AiOutlineCloseCircle onClick={toggleModal} className='x'/>
+    <h2 className='loginTitle'>Login</h2>
+    <AiFillCloseSquare onClick={toggleModal} className='x'/>
 
     </div>
 
