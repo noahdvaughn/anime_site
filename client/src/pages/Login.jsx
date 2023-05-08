@@ -30,10 +30,14 @@ const Login = ( {toggleModal, setUser}) => {
 
   return <div className="loginDiv">
 
-    <AiOutlineCloseCircle onClick={toggleModal}/>
+    <div className='flex xdiv'>
+    <h3 className='loginTitle'>Login</h3>
+    <AiOutlineCloseCircle onClick={toggleModal} className='x'/>
+
+    </div>
+
 
     <div className='flex'>
-    <h3 className='loginTitle'>Login</h3>
      <form className="loginForm" onSubmit={handleSubmit}>
             <div className="flex">
               <label className="noDec" htmlFor="email"></label>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterUser } from '../services/auth'
-import { AiOutlineCloseCircle } from 'react-icons/Ai'
+import { AiFillCloseSquare } from 'react-icons/Ai'
 
 
 const Register = ( {toggleRegistering}) => {
@@ -34,12 +34,12 @@ const Register = ( {toggleRegistering}) => {
   return<div className="loginDiv">
 
   <div className="flex xdiv">
-    <AiOutlineCloseCircle onClick={toggleRegistering}/>
+  <h2 className='loginTitle'>Register</h2>
+    <AiFillCloseSquare onClick={toggleRegistering} className='x'/>
   </div>
 
   <div className='flex'>
-  <h3 className='loginTitle'>Register</h3>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='loginForm'>
           <div>
             <input
               className="rounded-input"
