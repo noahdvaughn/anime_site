@@ -22,6 +22,9 @@ body{
   padding-left: 8vw;
   padding-top: 10vh;
 }
+h1{
+  font-size: 3.2rem;
+}
 
 .white{
   color: white;
@@ -106,14 +109,6 @@ transition: all 0.3s;
   background: rgba(49,49,49,0.5);
 }
 
-
-.animeCardPic{
-
-}
-// .animeCardTitle{
-//   height: 10vh;
-//   margin-top: -100px;
-// }
 .animeCardDiv{
   display: flex;
   flex-direction: column;
@@ -121,6 +116,10 @@ transition: all 0.3s;
   margin-right: 20px;
   transition: all 0.3s;
   height: 45vh;
+}
+.animeCardPic{
+  border-radius: 10px;
+
 }
 
 .animeDetailsBody{
@@ -141,6 +140,7 @@ transition: all 0.3s;
 .detailsImage{
   object-fit: contain;
   width: 40vw;
+  border-radius: 30px;
 }
 .detailsRecBody{
   overflow-wrap: break-word;
@@ -165,7 +165,6 @@ header{
   position: fixed;
   justify-content: space-between;
   z-index: 1;
-
   overflow-y: hidden;
   
 }
@@ -225,7 +224,7 @@ header{
   width: 50vw;
   height: 45vh;
   object-fit: cover;
-  
+  border-radius: 25px;
 }
 .homeCenterBody{
   overflow-y: scroll;

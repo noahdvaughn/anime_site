@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import './assets/colors.scss';
+
+@media (max-width: 700px ) {
+  .mobileHide{
+    display: none;
+  }
+  .mobileShow{
+    
+  }
+  body{
+    padding-left: 0;
+  }
+  .headerTitle{
+    font-size: 1.5rem;
+  }
+  h1{
+    font-size: 1.3rem;
+  }
+  .headerSocials{
+    display: none;
+  }
+  .homeRow{
+    height: 40vh;
+  }
+  .homeCenterAnime{
+    height: 40vh;
+  }
+  .plug{
+    width: 25px;
+    height: 25px;
+  }
+  .Sidebar{
+    // display: none;
+    bottom: 0;
+    right: 0;
+    // position: absolute;
+    width: 100vw;
+    height: 10vh;
+    flex-direction: row;
+  }
+  .sidebarLink{
+    height: 10vh;
+  }
+}

@@ -25,7 +25,7 @@ const SearchDetails = () => {
     console.log(searchedAnime)
 
   return <div>
-    {searchedAnime === null ? (<>Loading...</>) : 
+    {searchedAnime === null ? (<h1 style={{textAlign: 'center',  margin: '0'}}>Loading...</h1>) : 
     (<div>
       {searchedAnime.data.data.map((anime)=>(
       <AnimeCard anime={anime.node} key={anime.node.id}/>

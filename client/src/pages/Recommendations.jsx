@@ -61,9 +61,9 @@ const Recommendations = ({user, setUser}) => {
   console.log(recs)
 
   return <div className="recBody">
-    <h2 className="Roboto pinkUL">Recommendation Feed</h2>
     {recs ? (
       <div className="">
+        <h2 className="Roboto">Recommendation Feed</h2>
         {recs.data.map((rec)=>(
           <div className="flex rec" key={rec.id}>
 

@@ -15,7 +15,7 @@ const Navbar = () => {
   <header>
     <Link className='flex wh Roboto' to='/' >
     <img className='plug'src={plug}/>
-    <h1 >SakugaConnector</h1>
+    <h1 className='headerTitle'>SakugaConnector</h1>
     </Link>
 
     <div className='headerSearch'>
