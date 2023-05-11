@@ -109,7 +109,7 @@ const UserDetails = ({ user, setUser  }) => {
       <div className="flex">
         {viewingWatched ? (
            <div >
-           <h2 className="Roboto pinkUL">Anime watched</h2>
+           <h2 style={{textAlign: 'center'}}>Anime watched</h2>
            {userData.data.watched.length === 0 ? (<p>User has no watched</p>) : (
            <div className="userColumn"> 
              {userData.data.watched.map((watched)=>(
@@ -127,8 +127,8 @@ const UserDetails = ({ user, setUser  }) => {
         <div>
             {userData.data.reviews.length === 0 ? (<p>User has no reviews</p>) : (
               <div>
-                <h2 className="Roboto pinkUL">{userDetails.data.username}'s Reviews</h2>
-              <h3>Average Review Score: {averageScore.toFixed(2)}</h3>
+                <h2 style={{textAlign: 'center'}}>{userDetails.data.username}'s Reviews</h2>
+              <h3 style={{textAlign: 'center'}}>Average Review Score: {averageScore.toFixed(2)}</h3>
              {userData.data.reviews.map((review)=>(
                <div>
                 <Link to={`/details/${encodeURIComponent(review.animeName)}/${review.animeId}`} className="userReview white">
@@ -148,18 +148,16 @@ const UserDetails = ({ user, setUser  }) => {
         <div>
           {userData.data.reviews.length === 0 ? (<p>User has no recommendations</p>) : (
             <div>
-                <h2 className="Roboto pinkUL">{userDetails.data.username}'s Recs</h2>
+                <h2 style={{textAlign: 'center'}}>{userDetails.data.username}'s Recs</h2>
 
           {userData.data.recs.map((rec)=>(
                <div className="userRec">
-                
-
                 <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`} className=" white centerColumn">
                  <img src={rec.animePic} className="userWatchedPic"/>
                  <p>{rec.animeName}</p>
                  </Link>
 
-                 <h2 className="Bangers userRecBody">"{rec.body}"</h2>
+                 <h3 className=" userRecBody">"{rec.body}"</h3>
 
                 <Link to={`/details/${encodeURIComponent(rec.recommendedName)}/${rec.recommendedId}`} className=" white centerColumn" >
                  <img src={rec.recommendedPic} className="userWatchedPic"/>

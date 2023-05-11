@@ -71,7 +71,7 @@ const Recommendations = ({user, setUser}) => {
 
             <div className="column">
 
-            <div className="flex">
+            <div className="recTop">
 
 
 
@@ -94,20 +94,14 @@ const Recommendations = ({user, setUser}) => {
             }}>Edit Rec</button>): (<></>)}
             </div>
 
-            <Link to={`/user/${rec.userId}`} className='column white'>
+            <Link to={`/user/${rec.userId}`} className='recCreator white'>
             <img src={rec.userPic} className='reviewUser'/>
             <p>{rec.userName}</p>
             </Link>
 
 
-            <div className="column">
 
-            </div>
-            <div className="flex"> 
-
-            </div>
-
-            <div>
+            <div className="recAnime">
               <p className="italic">If you like...</p>
               <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`} className='white'>
               <img src={rec.animePic} className='recAnimePic'/>
@@ -117,7 +111,7 @@ const Recommendations = ({user, setUser}) => {
             </div>
 
 
-            <div>
+            <div className="recAnime">
               <p className="italic">You'll like</p>
               <Link to={`/details/${encodeURIComponent(rec.recommendedName)}/${rec.recommendedId}`} className='white'>
               <img src={rec.recommendedPic} className='recAnimePic'/>
@@ -129,8 +123,7 @@ const Recommendations = ({user, setUser}) => {
 
             </div>
             <div className="recDetails">
-
-            <h3 className="Bangers">"{rec.body}"</h3>
+            <h3>"{rec.body}"</h3>
             </div>
 
 

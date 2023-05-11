@@ -15,6 +15,7 @@
   body{
     padding-left: 0;
     overflow-x: hidden;
+    padding-bottom: 10vh;
     
   }
   .headerTitle{
@@ -39,7 +40,15 @@
   .rec{
     width: 100vw
   }
+  .recTop{
+    width: 100vw;
+  }
   .recAnimePic{
+    max-width: 6rem;
+    height: auto;
+  }
+  .recAnime{
+    text-align: center;
     max-width: 6rem;
   }
   .Sidebar{
@@ -53,5 +62,22 @@
   }
   .sidebarLink{
     height: 10vh;
+  }
+  .userTop{
+    flex-direction: column;
+  }
+  .userStats{
+    flex-direction: row;
+    width: 30vw;
+    justify-content: space-between;
+  }
+  .userWatched{
+    width: 100vw;
+  }
+  .userReview{
+    width: 100vw;
+  }
+  .userRec{
+    width: 100vw;
   }
 }

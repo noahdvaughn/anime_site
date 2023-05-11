@@ -230,9 +230,91 @@ header{
   overflow-y: scroll;
   height: 20vh;
 }
+.loginX{
+  margin-bottom: 0px;
+  margin-top: 0;
+  filter: drop-shadow(0px 0px 1px white);
+}
+.loginDiv{
+  height: 300px;
+  width: 300px;
+  background-color: #1e1e1e;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border: 1px solid white;
+}
+.loginTitle{
+  // padding: 5px;
+}
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px
+}
 
+
+.plug{
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border-radius: 90%;
+  height: 50px;
+}
+.recsArrow{
+  width: 25px;
+  filter: grayscale(50%);
+}
+.recAnimePic{
+  // max-width: 10rem;
+  height: 20rem;
+  border-radius: 10px;
+}
+.recBody{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+.rec{
+  background-color: #1e1e1e;
+  margin-bottom: 20px;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px;
+  
+}
+.recAnime{
+  background-color: #111;
+  border-radius: 10px;
+  margin-top: 1rem;
+  &:hover{
+    background-color: $grey;
+  }
+}
+.recDetails{
+  overflow-wrap:break-word;
+  overflow-y: auto;
+  text-align: center;
+  
+}
+.recTop{
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  justify-content: space-between;
+  align-items: center;
+
+}
 .recsArrowUp{
   font-size: 2rem;
+  cursor: pointer;
   &:hover{
     color: green;
   }
@@ -240,10 +322,19 @@ header{
 }
 .recsArrowDown{
   font-size: 2rem;
+  cursor: pointer;
+
   &:hover{
     color: red;
   }
   
+}
+.registerForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 230px;
+
 }
 
 .reviewDiv{
@@ -271,81 +362,13 @@ header{
   max-width: 50px;
   object-fit: cover;
   margin-right: 5px;
+  border-radius: 5px;
 }
 .reviewLink{
   display: flex;
   color: beige;
 }
-.loginX{
-  margin-bottom: 0px;
-  margin-top: 0;
-  filter: drop-shadow(0px 0px 1px white);
-}
-.loginDiv{
-  height: 300px;
-  width: 300px;
-  background-color: #1e1e1e;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  border: 1px solid white;
-}
-.loginTitle{
-  // padding: 5px;
-}
-.loginForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 200px
-}
-.registerForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 230px;
 
-}
-
-.plug{
-  width: 50px;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  border-radius: 90%;
-  height: 50px;
-}
-.recsArrow{
-  width: 25px;
-  filter: grayscale(50%);
-}
-.recAnimePic{
-  max-width: 10rem;
-}
-.recBody{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-}
-.rec{
-  background-color: #1e1e1e;
-  margin-bottom: 20px;
-  width: 50vw;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 20px;
-}
-.recDetails{
-  /* overflow-x: scroll; */
-  overflow-wrap:break-word;
-  overflow-y: auto;
-  // width: 15vw;
-  text-align: center;
-}
 
 .Sidebar{
   // background-color: $grey;
@@ -378,7 +401,8 @@ header{
 
 
 .userPagePic{
-  max-width: 25vw;
+  max-width: 15rem;
+  border-radius: 10px;
 }
 .userStack{
   display: flex;
@@ -406,8 +430,6 @@ header{
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  /* align-content: flex-end; */
-  /* align-items: center; */
 }
 .userReview{
   display: flex;
