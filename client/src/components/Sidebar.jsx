@@ -9,7 +9,7 @@ import userPic from '../assets/user.png'
 import pencil from '../assets/pencil.png'
 import folder from '../assets/folder.png'
 
-import {BsHouseDoorFill, BsPencilFill, BsFillFolderFill, BsFillArrowRightSquareFill,BsFillArrowLeftSquareFill } from 'react-icons/Bs'
+import {BsHouseDoorFill, BsPencilFill, BsFillFolderFill, BsFillArrowRightSquareFill,BsFillArrowLeftSquareFill, BsFillPersonFill } from 'react-icons/Bs'
 
 
 const Sidebar = ({setUser, user, handleLogOut}) => {
@@ -42,11 +42,12 @@ const Sidebar = ({setUser, user, handleLogOut}) => {
 
     {user ? (
       <>
-    <Link className='sidebarLink grow Roboto' to={`/user/${user.id}`}>
-    <img src={userPic} className='icon'/>
+    <Link className='sidebarLink Roboto' to={`/user/${user.id}`}>
+    <BsFillPersonFill className='icon'/>
     <p>Profile</p>
     </Link>
-    <div onClick={handleLogOut} className='sidebarLink grow Roboto'>
+
+    <div onClick={handleLogOut} className='sidebarLink Roboto'>
     <BsFillArrowLeftSquareFill className='icon'/>
     <p>Sign-Out</p>
     </div>
