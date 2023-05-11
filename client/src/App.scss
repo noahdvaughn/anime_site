@@ -231,7 +231,20 @@ header{
   height: 20vh;
 }
 
-
+.recsArrowUp{
+  font-size: 2rem;
+  &:hover{
+    color: green;
+  }
+  
+}
+.recsArrowDown{
+  font-size: 2rem;
+  &:hover{
+    color: red;
+  }
+  
+}
 
 .reviewDiv{
   display: flex;
@@ -309,7 +322,7 @@ header{
   filter: grayscale(50%);
 }
 .recAnimePic{
-  max-width: 150px;
+  max-width: 10rem;
 }
 .recBody{
   display: flex;
@@ -330,7 +343,8 @@ header{
   /* overflow-x: scroll; */
   overflow-wrap:break-word;
   overflow-y: auto;
-  width: 15vw;
+  // width: 15vw;
+  text-align: center;
 }
 
 .Sidebar{

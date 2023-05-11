@@ -6,6 +6,7 @@ import redArrow from '../assets/red-arrow.png'
 import { UpdateUser } from "../services/auth"
 import { UpdateRec } from "../services/recommended"
 import EditRecommendation from "./EditRecommendation"
+import {BsFillFileArrowDownFill, BsFillFileArrowUpFill } from 'react-icons/Bs'
 
 
 
@@ -58,25 +59,32 @@ const Recommendations = ({user, setUser}) => {
   }
 }
 
-  console.log(recs)
+
 
   return <div className="recBody">
     {recs ? (
       <div className="">
         <h2 className="Roboto">Recommendation Feed</h2>
+
         {recs.data.map((rec)=>(
           <div className="flex rec" key={rec.id}>
 
             <div className="column">
+
+            <div className="flex">
+
+
+
+            <div className="column">
               <div className="flex">
-            <img src={greenArrow} className={`recsArrow grow ${user && user.upvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
+            <BsFillFileArrowUpFill className={`recsArrowUp ${user && user.upvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
               userUpvote(rec.id, rec.upvotes)
             }}/>
               <p>{rec.upvotes}</p>
               </div>
 
             <div className="flex">
-            <img src={redArrow} className={`recsArrow grow ${user && user.downvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
+            <BsFillFileArrowDownFill className={`recsArrowDown  ${user && user.downvoted.includes(rec.id) ? 'votedOn' : '' }`} onClick={()=>{
               userDownvote(rec.id, rec.downvotes)
             }}/>
             <p>{rec.downvotes}</p>
@@ -91,6 +99,14 @@ const Recommendations = ({user, setUser}) => {
             <p>{rec.userName}</p>
             </Link>
 
+
+            <div className="column">
+
+            </div>
+            <div className="flex"> 
+
+            </div>
+
             <div>
               <p className="italic">If you like...</p>
               <Link to={`/details/${encodeURIComponent(rec.animeName)}/${rec.animeId}`} className='white'>
@@ -100,7 +116,6 @@ const Recommendations = ({user, setUser}) => {
               </Link>
             </div>
 
-            <h3 className="recDetails Bangers">"{rec.body}"</h3>
 
             <div>
               <p className="italic">You'll like</p>
@@ -109,13 +124,30 @@ const Recommendations = ({user, setUser}) => {
               <p>{rec.recommendedName}</p>
               
               </Link>
+
             </div>
+
+            </div>
+            <div className="recDetails">
+
+            <h3 className="Bangers">"{rec.body}"</h3>
+            </div>
+
+
+            </div>
+
+
+
+
+
+
             {editingRec ? (
               <div className="modal">
                 <div className="overlay">
                 <EditRecommendation rec={currentRec} toggleEditingRec={toggleEditingRec} setWritten={setWritten} written={written}/>
                 </div>
               </div>
+              
             ) : (<div></div>)}
 
 

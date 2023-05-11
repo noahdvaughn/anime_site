@@ -3,6 +3,9 @@
 @import './assets/colors.scss';
 
 @media (max-width: 700px ) {
+  html{
+    overflow-x: hidden;
+  }
   .mobileHide{
     display: none;
   }
@@ -11,6 +14,8 @@
   }
   body{
     padding-left: 0;
+    overflow-x: hidden;
+    
   }
   .headerTitle{
     font-size: 1.5rem;
@@ -31,11 +36,17 @@
     width: 25px;
     height: 25px;
   }
+  .rec{
+    width: 100vw
+  }
+  .recAnimePic{
+    max-width: 6rem;
+  }
   .Sidebar{
     // display: none;
     bottom: 0;
     right: 0;
-    // position: absolute;
+    position: fixed;
     width: 100vw;
     height: 10vh;
     flex-direction: row;
