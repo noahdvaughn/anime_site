@@ -18,6 +18,16 @@
     padding-bottom: 10vh;
     
   }
+  .animeDetailsTop{
+    flex-direction: column;
+    align-items: center;
+  }
+  .detailsImage{
+    width: 100vw;
+  }
+  .detailsColumn{
+    align-items: center;
+  }
   .headerTitle{
     font-size: 1.5rem;
   }
@@ -51,17 +61,23 @@
     text-align: center;
     max-width: 6rem;
   }
+  .review{
+    width: 100vw;
+  }
   .Sidebar{
-    // display: none;
+    
     bottom: 0;
     right: 0;
     position: fixed;
     width: 100vw;
     height: 10vh;
     flex-direction: row;
+    margin-bottom: -5px;
   }
   .sidebarLink{
     height: 10vh;
+    padding: 0;
+    margin: 0;
   }
   .userTop{
     flex-direction: column;

@@ -59,8 +59,10 @@ const AnimeDetails = ({user,setUser}) => {
   return <div className="noTop">
     {details ? (
       <div className="animeDetailsBody">
+
       <div className="animeDetailsTop">
         <img src={details.data.main_picture.large} className='detailsImage'/>
+
         <div className="detailsColumn">
           <h1 className="pinkUL flex">{details.data.title}</h1>
           <h2 >{details.data.alternative_titles.ja}</h2>
@@ -70,7 +72,7 @@ const AnimeDetails = ({user,setUser}) => {
               <p key={genre.name}>-{genre.name}</p>
             ))}
           </div>
-          <div className="column">
+          <div className="detailsColumn">
             <h3>Studios: </h3>
             {details.data.studios.map((studio)=>(
               <p key={studio.name}>-{studio.name}</p>
